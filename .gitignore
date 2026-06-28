@@ -1,0 +1,24 @@
+# Standard Java .gitignore template
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# VS Code specific files/folders
+.vscode/
+.project
+.classpath
+.factorypath
+
+# macOS system files
+.DS_Store
+
+# Java specific build folders (for Maven or Gradle)
+target/
+build/
+bin/
+
+# Ignore local commit message guide
+commits.md
