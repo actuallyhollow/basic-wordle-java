@@ -4,7 +4,7 @@ actual GUI, while focusing heavily on OOP principles to handle game logic and st
 optimize performance.
 
 ### 🚧 Status ###
-**Work in Progress** - Initial project structure setup.
+**Work in Progress** - Implementing core classes of project.
 
 ### 🎯 Goals ###
 1. **Apply OOP Concepts** - Strict encapsulation, class relationships, and abstraction.
@@ -57,12 +57,13 @@ java -cp bin com.omaridris.wordle.Main
  |   |---wordle-class-diagram.svg
  |---bin/                                                   # Compiled .class files (ignored)
  |---lib/                                                   # External dependencies (optional)
- |---|---junit-platform-console-standalone-1.13.0-M3.jar
++|---|---junit-platform-console-standalone-6.1.0.jar
  |---src/
  |   |---main/java/com/omaridris/wordle/
  |   |   |---controller/                                    # Game logic and turn management
  |   |   |---model/                                         # Custom datatypes and game state
  |   |   |---utilities/                                     # Helper structures
++|   |   |---|---FrequencyMap.java
  |   |   |---view/                                          # I/O and CLI
  |   |   |---Main.java                                      # Entry point
  |   |---test/java/com/omaridris/wordle/
@@ -70,6 +71,7 @@ java -cp bin com.omaridris.wordle.Main
  |   |   |---model/                                         # Custom datatypes tests
  |   |   |---utilities/                                     # Helper structures tests
  |   |   |---view/                                          # I/O and CLI tests
++|   |   |---|---FrequencyMapTest.java
  |---.gitignore
  |---LICENSE
  |---README.md
