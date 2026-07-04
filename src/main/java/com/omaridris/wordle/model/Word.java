@@ -22,7 +22,7 @@ public class Word {
      * <p>
      * 
      * @param text the English word.
-     * @throws IllegalArgumentException if the passed text is null, or is not a 5-letter English word.
+     * @throws IllegalArgumentException if the passed text is null, or is not a 5-letter English word
      */
     public Word(String text) throws IllegalArgumentException {
 
@@ -39,7 +39,7 @@ public class Word {
     /**
      * Gets the value of text.
      * 
-     * @return The text of the Word.
+     * @return The text of the Word
      */
     public String getText() {
         return this.text;
@@ -48,7 +48,7 @@ public class Word {
     /**
      * Gets the value of frequency map.
      * 
-     * @return The frequency map of the Word.
+     * @return The frequency map of the Word
      */
     public FrequencyMap getFrequencyMap() {
         return this.frequencyMap;
@@ -62,8 +62,8 @@ public class Word {
      * The criteria is that the text must be a valid object (not null), and must be exactly 5 letters long.
      * <p>
      * 
-     * @param text the English Word to validate.
-     * @throws IllegalArgumentException if the passed text is null, or is not a 5-letter English word.
+     * @param text the English Word to validate
+     * @throws IllegalArgumentException if the passed text is null, or is not a 5-letter English word
      */
     private void validateText(String text) throws IllegalArgumentException {
 
@@ -91,7 +91,7 @@ public class Word {
 
         char[] characters = this.text.toCharArray();
 
-        for (char character : characters) {
+        for(char character : characters) {
             this.frequencyMap.increment(character);
         }
 

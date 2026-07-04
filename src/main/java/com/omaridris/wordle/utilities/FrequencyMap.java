@@ -121,7 +121,7 @@ public class FrequencyMap {
      * <p>
      * 
      * @param character the English letter to compute its index
-     * @return the computed array index (0-25).
+     * @return the computed array index (0-25)
      * @throws IllegalArgumentException if the character is not an English letter
      */
     private int getIndex(char character) throws IllegalArgumentException {
