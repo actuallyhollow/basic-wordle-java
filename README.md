@@ -53,6 +53,7 @@ java -cp bin com.omaridris.wordle.Main
  |---.vscode/                                               # Local editor configuration (ignored)
  |   |---settings.json
  |---assets/                                                # Documentation media
++|   |---wordle-answers-alphabetical.txt
  |   |---wordle-class-diagram.drawio
  |   |---wordle-class-diagram.svg
  |---bin/                                                   # Compiled .class files (ignored)
@@ -62,7 +63,8 @@ java -cp bin com.omaridris.wordle.Main
  |   |---main/java/com/omaridris/wordle/
  |   |   |---controller/                                    # Game logic and turn management
  |   |   |---model/                                         # Custom datatypes and game state
-+|   |   |---|---Word.java
++|   |   |---|---Dictionary.java
+ |   |   |---|---Word.java
  |   |   |---utilities/                                     # Helper structures
  |   |   |---|---FrequencyMap.java
  |   |   |---view/                                          # I/O and CLI
@@ -70,7 +72,8 @@ java -cp bin com.omaridris.wordle.Main
  |   |---test/java/com/omaridris/wordle/
  |   |   |---controller/                                    # Game logic tests
  |   |   |---model/                                         # Custom datatypes tests
-+|   |   |---|---Word.java
++|   |   |---|---DictionaryTest.java
+ |   |   |---|---Word.java
  |   |   |---utilities/                                     # Helper structures tests
  |   |   |---|---FrequencyMapTest.java
  |   |   |---view/                                          # I/O and CLI tests
