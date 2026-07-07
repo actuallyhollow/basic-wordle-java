@@ -66,8 +66,9 @@ java -cp bin com.omaridris.wordle.Main
  |   |   |---|---Dictionary.java
  |   |   |---|---Word.java
  |   |   |---utilities/                                     # Helper structures
++|   |   |---|---Ansi.java
  |   |   |---|---FrequencyMap.java
-+|   |   |---|---RGB.java
+ |   |   |---|---RGB.java
  |   |   |---view/                                          # I/O and CLI
  |   |   |---Main.java                                      # Entry point
  |   |---test/java/com/omaridris/wordle/
@@ -76,8 +77,9 @@ java -cp bin com.omaridris.wordle.Main
  |   |   |---|---DictionaryTest.java
  |   |   |---|---Word.java
  |   |   |---utilities/                                     # Helper structures tests
++|   |   |---|---AnsiTest.java
  |   |   |---|---FrequencyMapTest.java
-+|   |   |---|---RGBTest.java
+ |   |   |---|---RGBTest.java
  |   |   |---view/                                          # I/O and CLI tests
  |---.gitignore
  |---LICENSE
