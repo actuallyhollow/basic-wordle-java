@@ -224,4 +224,33 @@ public class DictionaryTest {
 
     }
 
+    /**
+     * Tests {@link Dictionary#isValid(Word)} method to validate proper handling of null Words.
+     * <p>
+     * Tests are conducted using the AAA pattern (arrange, act, assert).
+     * <ul><li>
+     *   <b>Scenario:</b>
+     *     <ul><li>
+     *       isValid() is invoked with a null Word.
+     *     </li></ul>
+     * </li></ul>
+     * <ul><li>
+     *   <b>Expected:</b>
+     *     <ul><li>
+     *       IllegalArgumentException is thrown.
+     *     </li></ul>
+     * </li></ul>
+     */
+    @Test
+    public void testIsValidOnNullWord() {
+
+        // Arrange
+        Dictionary dictionary = Assertions.assertDoesNotThrow(() -> {return new Dictionary();});
+        Word nullWord = null;
+
+        // Act & Assert
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {dictionary.isValid(nullWord);}, "An invalid null word should result in IllegalArgumentException.");
+
+    }
+
 }

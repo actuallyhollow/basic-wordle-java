@@ -61,11 +61,18 @@ public class Dictionary {
      * 
      * @param word the Word to validate
      * @return true if the word exists, false otherwise
+     * @throws IllegalArgumentException if the passed Word is null
      */
-    public boolean isValid(Word word) {
+    public boolean isValid(Word word) throws IllegalArgumentException {
+
+        if(word == null) {
+            throw new IllegalArgumentException("Word cannot be null");
+        }
+
         String target = word.getText();
         int result = this.binarySearch(target);
         return result != -1;
+
     }
 
     // ----*---- Helper Methods ----*----
