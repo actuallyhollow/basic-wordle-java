@@ -17,7 +17,10 @@ public class Renderer {
 
     // ----*---- Attributes ----*----
 
-    private static final int DEFAULT_DELAY = 35;
+    /**
+     * The default delay in milliseconds between printed characters to simulate typing speed.
+     */
+    public static final int DEFAULT_DELAY = 35;
 
     /**
      * Prevents instantiation of new Renderer objects.
@@ -50,6 +53,10 @@ public class Renderer {
      * @param milliseconds the pause duration between each character
      */
     public static void print(String text, int milliseconds) {
+
+        if(text == null) {
+            text = "null";
+        }
 
         final char ANSI_START = '\u001B';
         final char ANSI_END = 'm';
@@ -126,6 +133,15 @@ public class Renderer {
      * @param foreground the RGB color for the foreground (or null to skip)
      */
     public static void printColored(String text, int milliseconds, RGB background, RGB foreground) {
+
+        if(text == null) {
+            text = "null";
+        }
+
+        if((background == null) && (foreground == null)) {
+            Renderer.print(text, milliseconds);
+            return;
+        }
 
         String backgroundSequence = (background != null) ? Ansi.getBackgroundSequence(background) : "";
         String foregroundSequence = (foreground != null) ? Ansi.getForegroundSequence(foreground) : "";
