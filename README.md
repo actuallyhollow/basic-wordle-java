@@ -4,7 +4,7 @@ actual GUI, while focusing heavily on OOP principles to handle game logic and st
 optimize performance.
 
 ### 🚧 Status ###
-**Work in Progress** - Implementing core classes of project.
+**Work in Progress** - Implementing the View layer and console interface.
 
 ### 🎯 Goals ###
 1. **Apply OOP Concepts** - Strict encapsulation, class relationships, and abstraction.
@@ -59,6 +59,7 @@ java -cp bin com.omaridris.wordle.Main
  |---bin/                                                   # Compiled .class files (ignored)
  |---lib/                                                   # External dependencies (optional)
  |---|---junit-platform-console-standalone-6.1.0.jar
++|---|---system-lambda-1.2.1.jar
  |---src/
  |   |---main/java/com/omaridris/wordle/
  |   |   |---controller/                                    # Game logic and turn management
@@ -66,10 +67,11 @@ java -cp bin com.omaridris.wordle.Main
  |   |   |---|---Dictionary.java
  |   |   |---|---Word.java
  |   |   |---utilities/                                     # Helper structures
-+|   |   |---|---Ansi.java
+ |   |   |---|---Ansi.java
  |   |   |---|---FrequencyMap.java
  |   |   |---|---RGB.java
  |   |   |---view/                                          # I/O and CLI
++|   |   |---|---Renderer.java
  |   |   |---Main.java                                      # Entry point
  |   |---test/java/com/omaridris/wordle/
  |   |   |---controller/                                    # Game logic tests
@@ -77,10 +79,11 @@ java -cp bin com.omaridris.wordle.Main
  |   |   |---|---DictionaryTest.java
  |   |   |---|---Word.java
  |   |   |---utilities/                                     # Helper structures tests
-+|   |   |---|---AnsiTest.java
+ |   |   |---|---AnsiTest.java
  |   |   |---|---FrequencyMapTest.java
  |   |   |---|---RGBTest.java
  |   |   |---view/                                          # I/O and CLI tests
++|   |   |---|---RendererTest.java
  |---.gitignore
  |---LICENSE
  |---README.md
