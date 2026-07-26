@@ -27,10 +27,10 @@
 
         <tspan x="20" dy="0" class="cyan repo">basic-wordle-java/</tspan>
         <tspan x="20" dy="18">├── <tspan class="yellow">assets/</tspan><tspan class="comment" x="500"># Documentation Media</tspan></tspan>
-        <tspan x="20" dy="18">│   ├── wordle-answers-alphabetical.txt</tspan>
-        <tspan x="20" dy="18">│   ├── wordle-class-diagram.drawio</tspan>
-        <tspan x="20" dy="18">│   ├── wordle-class-diagram.svg</tspan>
-        <tspan x="20" dy="18">│   <tspan class="new">└── wordle-file-tree.svg</tspan></tspan>
+        <tspan x="20" dy="18">│   ├── answers-alphabetical.txt</tspan>
+        <tspan x="20" dy="18">│   ├── class-diagram.drawio</tspan>
+        <tspan x="20" dy="18">│   ├── class-diagram.svg</tspan>
+        <tspan x="20" dy="18">│   └── file-tree.svg</tspan>
         <tspan x="20" dy="18">├── <tspan class="orange">lib/</tspan><tspan class="comment" x="500"># External Dependencies</tspan></tspan>
         <tspan x="20" dy="18">│   ├── junit-platform-console-standalone-6.1.0.jar</tspan>
         <tspan x="20" dy="18">│   └── system-lambda-1.2.1.jar</tspan>

@@ -14,7 +14,7 @@ optimize performance.
 
 ### 📁 Diagram ###
 **Unified UML Class Diagram** - Optimized for dark-themed environments.<br>
-<img src="assets/wordle-class-diagram.svg" width="85%" height="85%" alt="Unified UML Class Diagram.">
+<img src="assets/class-diagram.svg" width="85%" height="85%" alt="Unified UML Class Diagram.">
 
 ### ✏️ Additions ###
 **Commits** - To see the latest features, fixes, and updates, please check the [commit history](https://github.com/actuallyhollow/basic-wordle-java/commits/main).
@@ -48,7 +48,7 @@ java -cp bin com.omaridris.wordle.Main
 
 ### 🛠️ Structure ###
 **Project File Tree** - Optimized for dark-themed environments.<br>
-<img src="assets/wordle-file-tree.svg" width="85%" height="85%" alt="Project File Tree.">
+<img src="assets/file-tree.svg" width="85%" height="85%" alt="Project File Tree.">
 
 ### 📖 Credits ###
 * **Author** - Omar Idris

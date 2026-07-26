@@ -26,7 +26,7 @@ public class Dictionary {
      * By default, the Dictionary utilizes the original 2,315 curated Wordle answers extracted from the pre-NYT
      * source code, sourced via Cyrus Freshman's GitHub Gist archive.
      * 
-     * @throws FileNotFoundException if the "wordle-answers-alphabetical.txt" file is missing or inaccessible.
+     * @throws FileNotFoundException if the "answers-alphabetical.txt" file is missing or inaccessible.
      */
     public Dictionary() throws FileNotFoundException {
         this.answers = new ArrayList<>();
@@ -78,17 +78,17 @@ public class Dictionary {
     // ----*---- Helper Methods ----*----
 
     /**
-     * Loads the contents of "wordle-answers-alphabetical.txt" into the answers List.
+     * Loads the contents of "answers-alphabetical.txt" into the answers List.
      * <p>
      * The file contains 2,315 alphabetically-ordered words, each on a separate line. Each line is
      * loaded as a single element to the List. It is assumed that the file cannot be empty under any circumstance.
      * <p>
      * 
-     * @throws FileNotFoundException if the "wordle-answers-alphabetical.txt" file is missing or inaccessible.
+     * @throws FileNotFoundException if the "answers-alphabetical.txt" file is missing or inaccessible.
      */
     private void loadList() throws FileNotFoundException {
 
-        Scanner scanner = new Scanner(new File("assets/wordle-answers-alphabetical.txt"));
+        Scanner scanner = new Scanner(new File("assets/answers-alphabetical.txt"));
         
         try {
             while(scanner.hasNextLine() == true) {
