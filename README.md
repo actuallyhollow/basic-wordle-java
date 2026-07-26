@@ -13,83 +13,44 @@ optimize performance.
 4. **Write Clean and Documented Code** - Provide detailed and easy-to-read documentation.
 
 ### 📁 Diagram ###
-**Unified UML Class Diagram** -<br>
-![Unified UML Class Diagram](assets/wordle-class-diagram.svg)
+**Unified UML Class Diagram** - Optimized for dark-themed environments.<br>
+<img src="assets/wordle-class-diagram.svg" width="85%" height="85%" alt="Unified UML Class Diagram.">
 
 ### ✏️ Additions ###
 **Commits** - To see the latest features, fixes, and updates, please check the [commit history](https://github.com/actuallyhollow/basic-wordle-java/commits/main).
 
 ### 🎮 Rules ###
-**Rules of Play**
-* You have exactly 6 attempts to guess a randomly selected hidden 5-letter word.
-* Each guess inputted must be a valid 5-letter word from the game's internal dictionary.
-* After each submitted guess, a visual feedback will indicate how close your letters are to the hidden word.
+**How to Play**
+* **Make a Guess** - You have exactly 6 attempts to guess the hidden 5-letter word.
+* **Submit Valid Words** - Each guess must be a valid word from the game's internal dictionary.
+* **Receive Visual Clues** - Colored feedback will indicate how close your letters are to the hidden word.
 
 **Feedback Indicators**
-* **[🟩 Exact Match]:** The letter is in the hidden word, and in the correct position.
-* **[🟨 Partial Match]:** The letter is in the hidden word, but in the wrong position.
-* **[⬛ Incorrect]:** The letter does not exist in the hidden word in any position.
+* **🟩 Exact Match** - The letter is in the hidden word, and in the correct position.
+* **🟨 Partial Match** - The letter is in the hidden word, but in the wrong position.
+* **⬛ Incorrect** - The letter does not exist in the hidden word in any position.
 
 **Game End States**
-* **Victory:** Correctly guessing the 5-letter word before or on the 6th attempt.
-* **Defeat:** Exhausting all 6 attempts without matching the hidden word.
+* **Victory** - Correctly guessing the 5-letter word before or on the 6th attempt.
+* **Defeat** - Exhausting all 6 attempts without matching the hidden word.
 
 ### 🚀 Compiling ###
-1. **Environment** - JDK 17 or higher, an IDE (VS Code, IntelliJ, Eclipse).
-2. **Clone Repository** -
+**Setup** - Requires JDK 17 or higher, an IDE (VS Code, IntelliJ, Eclipse).
 ```bash
+# 1. Clone repository and navigate
 git clone https://github.com/actuallyhollow/basic-wordle-java.git
 cd basic-wordle-java
-```
-3. **Compile and Run** -
-```bash
-javac -d bin src/main/java/com/omaridris/wordle/Main.java
+
+# 2. Compile and run
+javac -d bin -sourcepath src/main/java src/main/java/com/omaridris/wordle/Main.java
 java -cp bin com.omaridris.wordle.Main
 ```
 
 ### 🛠️ Structure ###
-```diff
- basic-wordle-java/
- |---.vscode/                                               # Local editor configuration (ignored)
- |   |---settings.json
- |---assets/                                                # Documentation media
- |   |---wordle-answers-alphabetical.txt
- |   |---wordle-class-diagram.drawio
- |   |---wordle-class-diagram.svg
- |---bin/                                                   # Compiled .class files (ignored)
- |---lib/                                                   # External dependencies (optional)
- |---|---junit-platform-console-standalone-6.1.0.jar
-+|---|---system-lambda-1.2.1.jar
- |---src/
- |   |---main/java/com/omaridris/wordle/
- |   |   |---controller/                                    # Game logic and turn management
- |   |   |---model/                                         # Custom datatypes and game state
- |   |   |---|---Dictionary.java
- |   |   |---|---Word.java
- |   |   |---utilities/                                     # Helper structures
- |   |   |---|---Ansi.java
- |   |   |---|---FrequencyMap.java
- |   |   |---|---RGB.java
- |   |   |---view/                                          # I/O and CLI
-+|   |   |---|---Renderer.java
- |   |   |---Main.java                                      # Entry point
- |   |---test/java/com/omaridris/wordle/
- |   |   |---controller/                                    # Game logic tests
- |   |   |---model/                                         # Custom datatypes tests
- |   |   |---|---DictionaryTest.java
- |   |   |---|---Word.java
- |   |   |---utilities/                                     # Helper structures tests
- |   |   |---|---AnsiTest.java
- |   |   |---|---FrequencyMapTest.java
- |   |   |---|---RGBTest.java
- |   |   |---view/                                          # I/O and CLI tests
-+|   |   |---|---RendererTest.java
- |---.gitignore
- |---LICENSE
- |---README.md
-```
+**Project File Tree** - Optimized for dark-themed environments.<br>
+<img src="assets/wordle-file-tree.svg" width="85%" height="85%" alt="Project File Tree.">
 
 ### 📖 Credits ###
-* **Author:** Omar Idris
-* **GitHub:** [@actuallyhollow](https://github.com/actuallyhollow)
+* **Author** - Omar Idris
+* **GitHub** - [@actuallyhollow](https://github.com/actuallyhollow)
 * **License** - check the [LICENSE](LICENSE) file for details.

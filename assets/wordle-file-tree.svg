@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 670" width="850" height="670">
+
+    <style>
+
+        /* Global Text Settings */
+        .tree { font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 14px; fill: #A0AABF; }
+        
+        /* Structural Elements */
+        .comment { fill: #7B8496; font-style: italic; }
+        
+        /* Added Files */
+        .new { fill: rgb(45, 205, 115); font-weight: bold; }
+        
+        /* Color Palette */
+        .cyan {fill: #4AD5B0; }
+        .yellow { fill: #FBBF24; }
+        .green { fill: #C0E13B; }
+        .red { fill: #FF574A; }
+        .orange { fill: #FF822D; }
+        .repo { font-weight: bold; }
+
+    </style>
+
+    <rect width="100%" height="100%" fill="transparent" />
+
+    <text x="20" y="30" class="tree" xml:space="preserve">
+
+        <tspan x="20" dy="0" class="cyan repo">basic-wordle-java/</tspan>
+        <tspan x="20" dy="18">├── <tspan class="yellow">assets/</tspan><tspan class="comment" x="500"># Documentation Media</tspan></tspan>
+        <tspan x="20" dy="18">│   ├── wordle-answers-alphabetical.txt</tspan>
+        <tspan x="20" dy="18">│   ├── wordle-class-diagram.drawio</tspan>
+        <tspan x="20" dy="18">│   ├── wordle-class-diagram.svg</tspan>
+        <tspan x="20" dy="18">│   <tspan class="new">└── wordle-file-tree.svg</tspan></tspan>
+        <tspan x="20" dy="18">├── <tspan class="orange">lib/</tspan><tspan class="comment" x="500"># External Dependencies</tspan></tspan>
+        <tspan x="20" dy="18">│   ├── junit-platform-console-standalone-6.1.0.jar</tspan>
+        <tspan x="20" dy="18">│   └── system-lambda-1.2.1.jar</tspan>
+        <tspan x="20" dy="18">├── <tspan class="green">src/</tspan></tspan>
+        <tspan x="20" dy="18">│   ├── <tspan class="cyan">main/java/com/omaridris/wordle/</tspan></tspan>
+        <tspan x="20" dy="18">│   │   ├── <tspan class="yellow">controller/</tspan><tspan class="comment" x="500"># Game Logic</tspan></tspan>
+        <tspan x="20" dy="18">│   │   ├── <tspan class="red">model/</tspan><tspan class="comment" x="500"># Custom Datatypes</tspan></tspan>
+        <tspan x="20" dy="18">│   │   │   ├── Dictionary.java</tspan>
+        <tspan x="20" dy="18">│   │   │   └── Word.java</tspan>
+        <tspan x="20" dy="18">│   │   ├── <tspan class="green">utilities/</tspan><tspan class="comment" x="500"># Helper Structures</tspan></tspan>
+        <tspan x="20" dy="18">│   │   │   ├── Ansi.java</tspan>
+        <tspan x="20" dy="18">│   │   │   ├── FrequencyMap.java</tspan>
+        <tspan x="20" dy="18">│   │   │   └── RGB.java</tspan>
+        <tspan x="20" dy="18">│   │   ├── <tspan class="orange">view/</tspan><tspan class="comment" x="500"># I/O and CLI</tspan></tspan>
+        <tspan x="20" dy="18">│   │   │   └── Renderer.java</tspan>
+        <tspan x="20" dy="18">│   │   └── Main.java<tspan class="comment" x="500"># Entry Point</tspan></tspan>
+        <tspan x="20" dy="18">│   └── <tspan class="cyan">test/java/com/omaridris/wordle/</tspan></tspan>
+        <tspan x="20" dy="18">│       ├── <tspan class="yellow">controller/</tspan><tspan class="comment" x="500"># Game Logic Tests</tspan></tspan>
+        <tspan x="20" dy="18">│       ├── <tspan class="red">model/</tspan><tspan class="comment" x="500"># Custom Datatypes Tests</tspan></tspan>
+        <tspan x="20" dy="18">│       │   ├── DictionaryTest.java</tspan>
+        <tspan x="20" dy="18">│       │   └── WordTest.java</tspan>
+        <tspan x="20" dy="18">│       ├── <tspan class="green">utilities/</tspan><tspan class="comment" x="500"># Helper Structures Tests</tspan></tspan>
+        <tspan x="20" dy="18">│       │   ├── AnsiTest.java</tspan>
+        <tspan x="20" dy="18">│       │   ├── FrequencyMapTest.java</tspan>
+        <tspan x="20" dy="18">│       │   └── RGBTest.java</tspan>
+        <tspan x="20" dy="18">│       └── <tspan class="orange">view/</tspan><tspan class="comment" x="500"># I/O and CLI Tests</tspan></tspan>
+        <tspan x="20" dy="18">│           └── RendererTest.java</tspan>
+        <tspan x="20" dy="18">├── .gitignore</tspan>
+        <tspan x="20" dy="18">├── LICENSE</tspan>
+        <tspan x="20" dy="18">└── README.md</tspan>
+
+    </text>
+
+</svg>
