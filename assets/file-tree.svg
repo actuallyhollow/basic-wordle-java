@@ -1,7 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 670" width="850" height="670">
+<?xml version="1.0" encoding="UTF-8"?>
 
+<!-- Project File Tree Diagram with Vectorized Paths -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 670" width="720" height="670">
+
+    <!-- CSS Definitions for Text and Colors -->
     <style>
-
+    
         /* Global Text Settings */
         .tree { font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 14px; fill: #A0AABF; }
         
@@ -21,46 +25,89 @@
 
     </style>
 
-    <rect width="100%" height="100%" fill="transparent" />
+    <!-- Transparent Canvas -->
+    <rect width="100%" height="100%" fill="transparent"/>
 
-    <text x="20" y="30" class="tree" xml:space="preserve">
+    <!-- Vector Lines for the Tree Structure -->
+    <g stroke="#A0AABF" stroke-width="1.4" fill="none" stroke-linecap="round">
 
+        <!-- Level 1 Lines (Root) -->
+        <path d="M 24 36 V 656 M 24 44 H 46 M 24 134 H 46 M 24 188 H 46 M 24 620 H 46 M 24 638 H 46 M 24 656 H 46"/>
+        
+        <!-- Level 2 Lines -->
+        <path d="M 58 54 V 116 M 58 62 H 80 M 58 80 H 80 M 58 98 H 80 M 58 116 H 80"/>
+        <path d="M 58 144 V 170 M 58 152 H 80 M 58 170 H 80"/>
+        <path d="M 58 198 V 422 M 58 206 H 80 M 58 422 H 80"/>
+
+        <!-- Level 3 Lines -->
+        <path d="M 92 216 V 404 M 92 224 H 114 M 92 242 H 114 M 92 296 H 114 M 92 368 H 114 M 92 404 H 114"/>
+        <path d="M 92 432 V 584 M 92 440 H 114 M 92 458 H 114 M 92 512 H 114 M 92 584 H 114"/>
+
+        <!-- Level 4 Lines -->
+        <path d="M 126 252 V 278 M 126 260 H 148 M 126 278 H 148"/>
+        <path d="M 126 306 V 350 M 126 314 H 148 M 126 332 H 148 M 126 350 H 148"/>
+        <path d="M 126 378 V 386 M 126 386 H 148"/>
+        <path d="M 126 468 V 494 M 126 476 H 148 M 126 494 H 148"/>
+        <path d="M 126 522 V 566 M 126 530 H 148 M 126 548 H 148 M 126 566 H 148"/>
+        <path d="M 126 594 V 602 M 126 602 H 148"/>
+
+    </g>
+
+    <!-- Text Elements, Directories, and File Names -->
+    <text x="20" y="30" class="tree">
+
+        <!-- Root Repository -->
         <tspan x="20" dy="0" class="cyan repo">basic-wordle-java/</tspan>
-        <tspan x="20" dy="18">├── <tspan class="yellow">assets/</tspan><tspan class="comment" x="500"># Documentation Media</tspan></tspan>
-        <tspan x="20" dy="18">│   ├── answers-alphabetical.txt</tspan>
-        <tspan x="20" dy="18">│   ├── class-diagram.drawio</tspan>
-        <tspan x="20" dy="18">│   ├── class-diagram.svg</tspan>
-        <tspan x="20" dy="18">│   └── file-tree.svg</tspan>
-        <tspan x="20" dy="18">├── <tspan class="orange">lib/</tspan><tspan class="comment" x="500"># External Dependencies</tspan></tspan>
-        <tspan x="20" dy="18">│   ├── junit-platform-console-standalone-6.1.0.jar</tspan>
-        <tspan x="20" dy="18">│   └── system-lambda-1.2.1.jar</tspan>
-        <tspan x="20" dy="18">├── <tspan class="green">src/</tspan></tspan>
-        <tspan x="20" dy="18">│   ├── <tspan class="cyan">main/java/com/omaridris/wordle/</tspan></tspan>
-        <tspan x="20" dy="18">│   │   ├── <tspan class="yellow">controller/</tspan><tspan class="comment" x="500"># Game Logic</tspan></tspan>
-        <tspan x="20" dy="18">│   │   ├── <tspan class="red">model/</tspan><tspan class="comment" x="500"># Custom Datatypes</tspan></tspan>
-        <tspan x="20" dy="18">│   │   │   ├── Dictionary.java</tspan>
-        <tspan x="20" dy="18">│   │   │   └── Word.java</tspan>
-        <tspan x="20" dy="18">│   │   ├── <tspan class="green">utilities/</tspan><tspan class="comment" x="500"># Helper Structures</tspan></tspan>
-        <tspan x="20" dy="18">│   │   │   ├── Ansi.java</tspan>
-        <tspan x="20" dy="18">│   │   │   ├── FrequencyMap.java</tspan>
-        <tspan x="20" dy="18">│   │   │   └── RGB.java</tspan>
-        <tspan x="20" dy="18">│   │   ├── <tspan class="orange">view/</tspan><tspan class="comment" x="500"># I/O and CLI</tspan></tspan>
-        <tspan x="20" dy="18">│   │   │   └── Renderer.java</tspan>
-        <tspan x="20" dy="18">│   │   └── Main.java<tspan class="comment" x="500"># Entry Point</tspan></tspan>
-        <tspan x="20" dy="18">│   └── <tspan class="cyan">test/java/com/omaridris/wordle/</tspan></tspan>
-        <tspan x="20" dy="18">│       ├── <tspan class="yellow">controller/</tspan><tspan class="comment" x="500"># Game Logic Tests</tspan></tspan>
-        <tspan x="20" dy="18">│       ├── <tspan class="red">model/</tspan><tspan class="comment" x="500"># Custom Datatypes Tests</tspan></tspan>
-        <tspan x="20" dy="18">│       │   ├── DictionaryTest.java</tspan>
-        <tspan x="20" dy="18">│       │   └── WordTest.java</tspan>
-        <tspan x="20" dy="18">│       ├── <tspan class="green">utilities/</tspan><tspan class="comment" x="500"># Helper Structures Tests</tspan></tspan>
-        <tspan x="20" dy="18">│       │   ├── AnsiTest.java</tspan>
-        <tspan x="20" dy="18">│       │   ├── FrequencyMapTest.java</tspan>
-        <tspan x="20" dy="18">│       │   └── RGBTest.java</tspan>
-        <tspan x="20" dy="18">│       └── <tspan class="orange">view/</tspan><tspan class="comment" x="500"># I/O and CLI Tests</tspan></tspan>
-        <tspan x="20" dy="18">│           └── RendererTest.java</tspan>
-        <tspan x="20" dy="18">├── .gitignore</tspan>
-        <tspan x="20" dy="18">├── LICENSE</tspan>
-        <tspan x="20" dy="18">└── README.md</tspan>
+        
+        <!-- Documentation Media -->
+        <tspan x="54" dy="18"><tspan class="yellow">assets/</tspan><tspan class="comment" x="500"># Documentation Media</tspan></tspan>
+        <tspan x="88" dy="18">answers-alphabetical.txt</tspan>
+        <tspan x="88" dy="18">class-diagram.drawio</tspan>
+        <tspan x="88" dy="18">class-diagram.svg</tspan>
+        <tspan x="88" dy="18">file-tree.svg</tspan>
+        
+        <!-- External Dependencies -->
+        <tspan x="54" dy="18"><tspan class="orange">lib/</tspan><tspan class="comment" x="500"># External Dependencies</tspan></tspan>
+        <tspan x="88" dy="18">junit-platform-console-standalone-6.1.0.jar</tspan>
+        <tspan x="88" dy="18">system-lambda-1.2.1.jar</tspan>
+        
+        <!-- Main Source Code -->
+        <tspan x="54" dy="18"><tspan class="green">src/</tspan></tspan>
+        <tspan x="88" dy="18"><tspan class="cyan">main/java/com/omaridris/wordle/</tspan></tspan>
+        
+        <tspan x="122" dy="18"><tspan class="yellow">controller/</tspan><tspan class="comment" x="500"># Game Logic</tspan></tspan>
+        <tspan x="122" dy="18"><tspan class="red">model/</tspan><tspan class="comment" x="500"># Custom Datatypes</tspan></tspan>
+        <tspan x="156" dy="18">Dictionary.java</tspan>
+        <tspan x="156" dy="18">Word.java</tspan>
+        
+        <tspan x="122" dy="18"><tspan class="green">utilities/</tspan><tspan class="comment" x="500"># Helper Structures</tspan></tspan>
+        <tspan x="156" dy="18">Ansi.java</tspan>
+        <tspan x="156" dy="18">FrequencyMap.java</tspan>
+        <tspan x="156" dy="18">RGB.java</tspan>
+        
+        <tspan x="122" dy="18"><tspan class="orange">view/</tspan><tspan class="comment" x="500"># I/O and CLI</tspan></tspan>
+        <tspan x="156" dy="18">Renderer.java</tspan>
+        <tspan x="122" dy="18">Main.java<tspan class="comment" x="500"># Entry Point</tspan></tspan>
+        
+        <!-- Unit Tests -->
+        <tspan x="88" dy="18"><tspan class="cyan">test/java/com/omaridris/wordle/</tspan></tspan>
+        <tspan x="122" dy="18"><tspan class="yellow">controller/</tspan><tspan class="comment" x="500"># Game Logic Tests</tspan></tspan>
+        <tspan x="122" dy="18"><tspan class="red">model/</tspan><tspan class="comment" x="500"># Custom Datatypes Tests</tspan></tspan>
+        <tspan x="156" dy="18">DictionaryTest.java</tspan>
+        <tspan x="156" dy="18">WordTest.java</tspan>
+        
+        <tspan x="122" dy="18"><tspan class="green">utilities/</tspan><tspan class="comment" x="500"># Helper Structures Tests</tspan></tspan>
+        <tspan x="156" dy="18">AnsiTest.java</tspan>
+        <tspan x="156" dy="18">FrequencyMapTest.java</tspan>
+        <tspan x="156" dy="18">RGBTest.java</tspan>
+        
+        <tspan x="122" dy="18"><tspan class="orange">view/</tspan><tspan class="comment" x="500"># I/O and CLI Tests</tspan></tspan>
+        <tspan x="156" dy="18">RendererTest.java</tspan>
+        
+        <!-- Repository Configuration Files -->
+        <tspan x="54" dy="18">.gitignore</tspan>
+        <tspan x="54" dy="18">LICENSE</tspan>
+        <tspan x="54" dy="18">README.md</tspan>
 
     </text>
 
