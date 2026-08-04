@@ -7,32 +7,23 @@ import com.omaridris.wordle.utilities.FrequencyMap;
 /**
  * Conducts tests on the methods of {@link Word} using JUnit API.
  * <p>
- * Trivial methods (e.g. standard constructors, setters, getters) are not tested.
- * Only methods with non-linear logic will be tested.
+ * Trivial methods (e.g. standard constructors, setters, or getters) are not tested;
+ * thus, only methods with non-linear logic will be tested.
  * 
  * @author Omar Idris
  */
 public class WordTest {
 
-    // ----*---- Testing Instantiation ----*----
+    // ------*------ Testing Word(String) ------*------
 
     /**
      * Tests {@link Word#Word(String)} constructor to validate proper instantiation on
      * valid text (non-null String of length 5).
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       Word() is invoked with a valid text.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       a Word object is instantiated with the valid text and its character frequencies as attributes.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario Word(String) is invoked with a valid text
+     * @expected a Word object is instantiated with valid text and character frequencies
      */
     @Test
     public void testInstantiationOnValidText() {
@@ -65,21 +56,13 @@ public class WordTest {
     }
 
     /**
-     * Tests {@link Word#Word(String)} constructor to validate proper instantiation on invalid null text.
+     * Tests {@link Word#Word(String)} constructor to validate the proper handling of
+     * null text.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       Word() is invoked with a null text.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       IllegalArgumentException is thrown.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario Word(String) is invoked with a null text
+     * @expected IllegalArgumentException is thrown
      */
     @Test
     public void testInstantiationOnNullText() {
@@ -93,22 +76,13 @@ public class WordTest {
     }
 
     /**
-     * Tests {@link Word#Word(String)} constructor to validate proper instantiation on
-     * invalid text (String of length not equal to 5).
+     * Tests {@link Word#Word(String)} constructor to validate the proper handling of
+     * invalid text (non-null String of length not equal to 5).
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       Word() is invoked with an invalid text.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       IllegalArgumentException is thrown.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario Word(String) is invoked with an invalid text
+     * @expected IllegalArgumentException is thrown
      */
     @Test
     public void testInstantiationOnInvalidText() {

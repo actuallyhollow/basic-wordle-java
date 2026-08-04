@@ -1,16 +1,16 @@
 package com.omaridris.wordle.utilities;
 
 /**
- * A custom and highly specialized implementation of an array-based Hash Map.
+ * Defines a custom, highly specialized implementation of an array-based Hash Map.
  * <p>
- * This Data Structure specializes in tracking the frequencies of English letters, achieving O(1) time
- * complexity for all operations using direct array indexing.
+ * This Data Structure specializes in tracking the frequencies of English letters;
+ * thus, it achieves O(1) time complexity for all operations using direct array indexing.
  * 
  * @author Omar Idris
  */
 public class FrequencyMap {
 
-    // ----*---- Attributes ----*----
+    // ------*------ Attributes ------*------
 
     private static final int ALPHABET_SIZE = 26;
     private int[] frequencies;
@@ -18,20 +18,19 @@ public class FrequencyMap {
     /**
      * Instantiates a new Frequency Map object.
      * <p>
-     * By default, size is fixed to 26 indices, representing the English alphabet, with all letter
-     * frequencies initialized to 0.
+     * By default, the underlying array's size is fixed to 26 indices, representing the
+     * English alphabet, with all letter frequencies initialized to 0.
      */
     public FrequencyMap() {
         this.frequencies = new int[ALPHABET_SIZE];
     }
 
-    // ----*---- Frequency Modification ----*----
+    // ------*------ Frequency Modification ------*------
 
     /**
      * Increases the frequency of a character by 1 in a Frequency Map.
      * <p>
      * It is mutative as it modifies the map's internal state.
-     * <p>
      * 
      * @param character the English letter to increment
      * @throws IllegalArgumentException if the character is not an English letter
@@ -45,7 +44,6 @@ public class FrequencyMap {
      * Decreases the frequency of a character by 1 in a Frequency Map.
      * <p>
      * It is mutative as it modifies the map's internal state.
-     * <p>
      * 
      * @param character the English letter to decrement
      * @throws IllegalArgumentException if the character is not an English letter
@@ -63,13 +61,12 @@ public class FrequencyMap {
 
     }
 
-    // ----*---- Frequency Access ----*----
+    // ------*------ Frequency Access ------*------
 
     /**
      * Returns the frequency of a character in a Frequency Map.
      * <p>
      * It is non-mutative as it does not modify the map's internal state.
-     * <p>
      * 
      * @param character the English letter to access
      * @return the frequency of the character
@@ -80,13 +77,12 @@ public class FrequencyMap {
         return this.frequencies[index];
     }
 
-    // ----*---- State Operations ----*----
+    // ------*------ State Operations ------*------
 
     /**
      * Checks if a Frequency Map has no frequencies greater than 0.
      * <p>
      * It is non-mutative as it does not modify the map's internal state.
-     * <p>
      * 
      * @return true if all character frequencies are 0, false otherwise 
      */
@@ -105,20 +101,18 @@ public class FrequencyMap {
      * Sets all frequencies to 0 in a Frequency Map.
      * <p>
      * It is mutative as it modifies the map's internal state.
-     * <p>
      */
     public void clear() {
         this.frequencies = new int[ALPHABET_SIZE];
     }
 
-    // ----*---- Helper Methods ----*----
+    // ------*------ Helper Methods ------*------
 
     /**
      * Computes the array index of a character in a Frequency Map.
      * <p>
-     * The unique index is obtained by subtracting the ASCII value of an 
-     * uppercase 'A' from the ASCII value of the character.
-     * <p>
+     * The unique index is obtained by subtracting the ASCII value of an uppercase 'A'
+     * from the ASCII value of the character.
      * 
      * @param character the English letter to compute its index
      * @return the computed array index (0-25)

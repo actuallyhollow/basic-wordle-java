@@ -6,19 +6,20 @@ import com.omaridris.wordle.utilities.RGB;
 /**
  * Renders regular and colored text to the console.
  * <p>
- * This utility class handles the animation of text using a "typewriter" effect, or character-by-character rendering,
- * and the proper formatting of colored text using ANSI escape sequences.
+ * This utility class handles the animation of text using a "typewriter" effect, or
+ * character-by-character rendering, and the proper formatting of colored text using ANSI
+ * escape sequences.
  * <p>
- * Cannot be instantiated, and can only be statically accessed.
+ * It cannot be instantiated and can only be statically accessed.
  * 
  * @author Omar Idris
  */
 public class Renderer {
 
-    // ----*---- Attributes ----*----
+    // ------*------ Attributes ------*------
 
     /**
-     * The default delay in milliseconds between printed characters to simulate typing speed.
+     * The default millisecond delay between printed characters to simulate typing speed.
      */
     public static final int DEFAULT_DELAY = 35;
 
@@ -27,13 +28,13 @@ public class Renderer {
      */
     private Renderer() {}
 
-    // ----*---- Text Rendering ----*----
+    // ------*------ Text Rendering ------*------
 
     /**
-     * Prints text to the console character-by-character using the default delay of 35 milliseconds as typing speed.
+     * Prints text to the console character-by-character using the default delay of 35
+     * milliseconds as typing speed.
      * <p>
      * The console stream is flushed after every character to ensure real-time rendering.
-     * <p>
      * 
      * @param text the String to print
      * @see Renderer#print(String, int)
@@ -43,11 +44,12 @@ public class Renderer {
     }
 
     /**
-     * Prints text to the console character-by-character using the passed milliseconds delay as typing speed.
+     * Prints text to the console character-by-character using the passed milliseconds
+     * delay as typing speed.
      * <p>
-     * ANSI escape sequences are detected and printed instantly to prevent artificial delays,
-     * and the console stream is flushed after every character to ensure real-time rendering.
-     * <p>
+     * ANSI escape sequences are detected and printed instantly to prevent artificial
+     * delays, and the console stream is flushed after every character to ensure
+     * real-time rendering.
      * 
      * @param text the String to print
      * @param milliseconds the pause duration between each character
@@ -84,14 +86,13 @@ public class Renderer {
 
     }
 
-    // ----*---- Color Rendering ----*----
+    // ------*------ Color Rendering ------*------
 
     /**
-     * Prints text to the console character-by-character with specified foreground RGB color
-     * using the default delay of 35 milliseconds as typing speed.
+     * Prints text to the console character-by-character with specified foreground RGB
+     * color using the default delay of 35 milliseconds as typing speed.
      * <p>
      * Passing null to the RGB parameter uses the console's default color.
-     * <p>
      * 
      * @param text the String to print
      * @param foreground the RGB color for the foreground (or null to skip)
@@ -102,11 +103,10 @@ public class Renderer {
     }
 
     /**
-     * Prints text to the console character-by-character with specified background and foreground RGB colors
-     * using the default delay of 35 milliseconds as typing speed.
+     * Prints text to the console character-by-character with specified background and
+     * foreground RGB colors using the default delay of 35 milliseconds as typing speed.
      * <p>
-     * Passing null to either RGB parameters uses the console's default color.
-     * <p>
+     * Passing null to either RGB parameter uses the console's default color.
      * 
      * @param text the String to print
      * @param background the RGB color for the background (or null to skip)
@@ -118,14 +118,14 @@ public class Renderer {
     }
 
     /**
-     * Prints text to the console character-by-character with specified background and foreground RGB colors
-     * using the passed milliseconds delay as typing speed.
+     * Prints text to the console character-by-character with specified background and
+     * foreground RGB colors using the passed milliseconds delay as typing speed.
      * <p>
-     * Passing null to either RGB parameters uses the console's default color.
+     * Passing null to either RGB parameter uses the console's default color.
      * <p>
-     * An ANSI reset sequence is appended to the end of the String. This ensures terminal formatting reverts to
-     * default when the String is printed, thus preventing color bleeding.
-     * <p>
+     * An ANSI reset sequence is appended to the end of the String; thus, it ensures
+     * console formatting reverts to default when the String is printed, preventing
+     * color bleeds.
      * 
      * @param text the String to print
      * @param milliseconds the pause duration between each character
@@ -147,7 +147,7 @@ public class Renderer {
         String foregroundSequence = (foreground != null) ? Ansi.getForegroundSequence(foreground) : "";
         String activeColors = backgroundSequence + foregroundSequence;
         
-        // Protects against color bleeds caused by '\n' by using RESET then printing '\n' then reactivating the colors.
+        // Protects against color bleeds caused by '\n' by using RESET, printing '\n', and then reactivating the colors.
         String coloredText = text.replace("\n", Ansi.RESET + "\n" + activeColors);
 
         System.out.print(activeColors);
@@ -156,11 +156,10 @@ public class Renderer {
 
     }
 
-    // ----*---- Helper Methods ----*----
+    // ------*------ Helper Methods ------*------
 
     /**
      * Pauses the current thread for the specified duration in milliseconds.
-     * <p>
      * 
      * @param milliseconds the duration for the thread to sleep
      */

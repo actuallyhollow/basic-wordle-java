@@ -7,41 +7,42 @@ import java.io.FileNotFoundException;
 import java.security.SecureRandom;
 
 /**
- * Represents a Dictionary containing all valid Words for both game targets and user guesses.
+ * Represents a Dictionary containing all valid Words for both game targets and guesses.
  * <p>
- * This class defines random retrieval for a target Word using CSPRNG,
- * and O(log n) validation for user guesses.
+ * This class defines the underlying answers List containing the Words' raw Strings,
+ * a CSPRNG-based retrieval for a target Word, and O(log n) validation for user guesses.
  * 
  * @author Omar Idris
  */
 public class Dictionary {
 
-    // ----*---- Attributes ----*----
+    // ------*------ Attributes ------*------
 
     private ArrayList<String> answers;
 
     /**
      * Instantiates a new Dictionary object.
      * <p>
-     * By default, the Dictionary utilizes the original 2,315 curated Wordle answers extracted from the pre-NYT
-     * source code, sourced via Cyrus Freshman's GitHub Gist archive.
+     * By default, the Dictionary utilizes the original 2,315 curated Wordle answers
+     * extracted from the pre-NYT source code, sourced via Cyrus Freshman's GitHub Gist
+     * archive, and loads them in the answers List.
      * 
-     * @throws FileNotFoundException if the "answers-alphabetical.txt" file is missing or inaccessible.
+     * @throws FileNotFoundException if the answers asset is missing or inaccessible
      */
     public Dictionary() throws FileNotFoundException {
         this.answers = new ArrayList<>();
         this.loadList();
     }
 
-    // ----*---- Accessing & Validating ----*----
+    // ------*------ Accessing & Validating ------*------
 
     /**
-     * Returns a randomly selected Word from the Dictionary.
+     * Returns a randomly selected Word from the Dictionary's answers List.
      * <p>
-     * This method utilizes a Cryptographically Secure Pseudo-Random Number Generator to randomly
-     * select the target index. CSPRNG uses OS-level environmental entropy rather than a deterministic
-     * mathematical seed, thus ensuring the chosen target Word is completely unpredictable.
-     * <p>
+     * This method utilizes a Cryptographically Secure Pseudo-Random Number Generator to
+     * randomly select the target index. CSPRNG uses OS-level environmental entropy
+     * rather than a deterministic mathematical seed; thus, it ensures the chosen target
+     * Word is completely unpredictable.
      * 
      * @return a randomly selected Word
      * @throws IndexOutOfBoundsException if the selected index is out of range (0, size-1)
@@ -55,12 +56,11 @@ public class Dictionary {
     }
 
     /**
-     * Determines whether a Word exists in the Dictionary by performing a Binary Search.
-     * Hence, determining its validity.
-     * <p>
+     * Determines whether a Word exists in the Dictionary's answers List by performing
+     * a Binary Search; hence, it verifies its validity.
      * 
      * @param word the Word to validate
-     * @return true if the word exists, false otherwise
+     * @return true if the Word exists, false otherwise
      * @throws IllegalArgumentException if the passed Word is null
      */
     public boolean isValid(Word word) throws IllegalArgumentException {
@@ -75,16 +75,16 @@ public class Dictionary {
 
     }
 
-    // ----*---- Helper Methods ----*----
+    // ------*------ Helper Methods ------*------
 
     /**
      * Loads the contents of "answers-alphabetical.txt" into the answers List.
      * <p>
-     * The file contains 2,315 alphabetically-ordered words, each on a separate line. Each line is
-     * loaded as a single element to the List. It is assumed that the file cannot be empty under any circumstance.
-     * <p>
+     * The file contains 2,315 alphabetically ordered words, each on a separate line.
+     * Each line is loaded as a single element to the List. It is assumed that the file
+     * cannot be empty under any circumstance.
      * 
-     * @throws FileNotFoundException if the "answers-alphabetical.txt" file is missing or inaccessible.
+     * @throws FileNotFoundException if the answers asset is missing or inaccessible
      */
     private void loadList() throws FileNotFoundException {
 
@@ -101,10 +101,11 @@ public class Dictionary {
     }
 
     /**
-     * Performs an iterative Binary Search to locate a specific word/text within the answers List.
+     * Performs an iterative Binary Search to locate a specific Word's raw text within
+     * the answers List.
      * <p>
-     * By assuming that the List is ordered alphabetically, the algorithm operates in O(log n) time complexity.
-     * <p>
+     * Assuming that the List is ordered alphabetically, the algorithm operates in
+     * O(log n) time complexity.
      *
      * @param target the raw text to locate
      * @return the index of the target text if found, otherwise -1

@@ -3,25 +3,26 @@ package com.omaridris.wordle.utilities;
 /**
  * Represents an immutable 24-bit RGB color.
  * <p>
- * This class defines the three 8-bit color channels, ensuring valid RGB values per channel.
+ * This class defines the three 8-bit color channels; thus, it ensures valid RGB
+ * values per channel.
  * 
  * @author Omar Idris
  */
 public class RGB {
 
-    // ----*---- Attributes ----*----
+    // ------*------ Attributes ------*------
 
     private final int r;
     private final int g;
     private final int b;
 
     /**
-     * Instantiates a new RGB object.
+     * Instantiates a new, valid RGB object.
      * 
      * @param r the red value in the RGB
      * @param g the green value in the RGB
      * @param b the blue value in the RGB
-     * @throws IllegalArgumentException if either passed values is out of range (0, 255)
+     * @throws IllegalArgumentException if any passed value is out of range (0, 255)
      */
     public RGB(int r, int g, int b) throws IllegalArgumentException {
 
@@ -33,45 +34,44 @@ public class RGB {
 
     }
 
-    // ----*---- Getters / Accessors ----*----
+    // ------*------ Getters / Accessors ------*------
 
     /**
-     * Gets the value of r.
+     * Gets the underlying red channel's value.
      * 
-     * @return The r value in the RGB object.
+     * @return the red value in the RGB object
      */
     public int getR() {
         return this.r;
     }
 
     /**
-     * Gets the value of g.
+     * Gets the underlying green channel's value.
      * 
-     * @return The g value in the RGB object.
+     * @return the green value in the RGB object
      */
     public int getG() {
         return this.g;
     }
 
     /**
-     * Gets the value of b.
+     * Gets the underlying blue channel's value.
      * 
-     * @return The b value in the RGB object.
+     * @return the blue value in the RGB object
      */
     public int getB() {
         return this.b;
     }
 
-    // ----*---- Helper Methods ----*----
+    // ------*------ Helper Methods ------*------
 
     /**
-     * Checks whether the passed RGB values are valid.
-     * <p>
+     * Checks whether the passed RGB channel values are valid.
      * 
      * @param r the red value in the RGB
      * @param g the green value in the RGB
      * @param b the blue value in the RGB
-     * @throws IllegalArgumentException if either passed values is out of range (0, 255)
+     * @throws IllegalArgumentException if any passed value is out of range (0, 255)
      */
     private void validateRGB(int r, int g, int b) throws IllegalArgumentException {
 

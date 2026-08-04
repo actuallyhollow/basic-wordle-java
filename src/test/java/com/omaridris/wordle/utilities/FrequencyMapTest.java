@@ -6,31 +6,23 @@ import org.junit.jupiter.api.Assertions;
 /**
  * Conducts tests on the methods of {@link FrequencyMap} using JUnit API.
  * <p>
- * Trivial methods (e.g. standard constructors, setters, getters) are not tested.
- * Only methods with non-linear logic will be tested.
+ * Trivial methods (e.g. standard constructors, setters, or getters) are not tested;
+ * thus, only methods with non-linear logic will be tested.
  * 
  * @author Omar Idris
  */
 public class FrequencyMapTest {
 
-    // ----*---- Testing increment() ----*----
+    // ------*------ Testing increment(char) ------*------
 
     /**
-     * Tests {@link FrequencyMap#increment(char)} method to validate frequency increase on uppercase letters.
+     * Tests {@link FrequencyMap#increment(char)} method to validate that frequency
+     * increases on uppercase letters.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       increment() is invoked with an uppercase letter.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       frequency of said letter should increase by 1.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario increment(char) is invoked with an uppercase letter
+     * @expected the frequency of the letter increases by 1
      */
     @Test
     public void testIncrementOnUppercaseLetter() {
@@ -50,21 +42,13 @@ public class FrequencyMapTest {
     }
 
     /**
-     * Tests {@link FrequencyMap#increment(char)} method to validate frequency increase on lowercase letters.
+     * Tests {@link FrequencyMap#increment(char)} method to validate that frequency
+     * increases on lowercase letters.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       increment() is invoked with an lowercase letter.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       frequency of said letter should increase by 1.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario increment(char) is invoked with a lowercase letter
+     * @expected the frequency of the letter increases by 1
      */
     @Test
     public void testIncrementOnLowercaseLetter() {
@@ -84,21 +68,13 @@ public class FrequencyMapTest {
     }
 
     /**
-     * Tests {@link FrequencyMap#increment(char)} method to validate exception handling on invalid characters.
+     * Tests {@link FrequencyMap#increment(char)} method to validate the proper handling
+     * of invalid characters.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       increment() is invoked with an invalid character (not an English letter).
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       IllegalArgumentException is thrown.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario increment(char) is invoked with an invalid character (non-letter)
+     * @expected IllegalArgumentException is thrown
      */
     @Test
     public void testIncrementOnInvalidCharacter() {
@@ -112,24 +88,16 @@ public class FrequencyMapTest {
 
     }
 
-    // ----*---- Testing decrement() ----*----
+    // ------*------ Testing decrement(char) ------*------
 
     /**
-     * Tests {@link FrequencyMap#decrement(char)} method to validate frequency decrease on uppercase letters.
+     * Tests {@link FrequencyMap#decrement(char)} method to validate that frequency
+     * decreases on uppercase letters.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       decrement() is invoked with an uppercase letter.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       frequency of said letter should decrease by 1.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario decrement(char) is invoked with an uppercase letter
+     * @expected the frequency of the letter decreases by 1
      */
     @Test
     public void testDecrementOnUppercaseLetter() {
@@ -151,21 +119,13 @@ public class FrequencyMapTest {
     }
 
     /**
-     * Tests {@link FrequencyMap#decrement(char)} method to validate frequency decrease on lowercase letters.
+     * Tests {@link FrequencyMap#decrement(char)} method to validate that frequency
+     * decreases on lowercase letters.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       decrement() is invoked with an lowercase letter.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       frequency of said letter should decrease by 1.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario decrement(char) is invoked with a lowercase letter
+     * @expected the frequency of the letter decreases by 1
      */
     @Test
     public void testDecrementOnLowercaseLetter() {
@@ -187,22 +147,13 @@ public class FrequencyMapTest {
     }
 
     /**
-     * Tests {@link FrequencyMap#decrement(char)} method to validate exception handling when decreasing
-     * zero-frequency letters.
+     * Tests {@link FrequencyMap#decrement(char)} method to validate the proper handling
+     * of decreasing letters that have no recorded frequency.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       decrement() is invoked with a letter that has no recorded frequency.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       IllegalStateException is thrown.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario decrement(char) is invoked with a zero-frequency letter
+     * @expected IllegalStateException is thrown
      */
     @Test
     public void testDecrementOnLetterWithNoFrequency() {
@@ -216,23 +167,14 @@ public class FrequencyMapTest {
 
     }
 
-
     /**
-     * Tests {@link FrequencyMap#decrement(char)} method to validate exception handling on invalid characters.
+     * Tests {@link FrequencyMap#decrement(char)} method to validate the proper handling
+     * of invalid characters.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       decrement() is invoked with an invalid character (not an English letter).
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       IllegalArgumentException is thrown.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario decrement(char) is invoked with an invalid character (non-letter)
+     * @expected IllegalArgumentException is thrown
      */
     @Test
     public void testDecrementOnInvalidCharacter() {
@@ -246,24 +188,16 @@ public class FrequencyMapTest {
 
     }
 
-    // ----*---- Testing getFrequency() ----*----
+    // ------*------ Testing getFrequency(char) ------*------
 
     /**
-     * Tests {@link FrequencyMap#getFrequency(char)} method to validate frequency access on uppercase letters.
+     * Tests {@link FrequencyMap#getFrequency(char)} method to validate frequency access
+     * on uppercase letters.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       getFrequency() is invoked with an uppercase letter.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       frequency of said letter is returned.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario getFrequency(char) is invoked with an uppercase letter
+     * @expected the frequency of the letter is returned
      */
     @Test
     public void testGetFrequencyOnUppercaseLetter() {
@@ -282,21 +216,13 @@ public class FrequencyMapTest {
     }
 
     /**
-     * Tests {@link FrequencyMap#getFrequency(char)} method to validate frequency access on lowercase letters.
+     * Tests {@link FrequencyMap#getFrequency(char)} method to validate frequency access
+     * on lowercase letters.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       getFrequency() is invoked with an lowercase letter.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       frequency of said letter is returned.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario getFrequency(char) is invoked with a lowercase letter
+     * @expected the frequency of the letter is returned
      */
     @Test
     public void testGetFrequencyOnLowercaseLetter() {
@@ -315,21 +241,13 @@ public class FrequencyMapTest {
     }
 
     /**
-     * Tests {@link FrequencyMap#getFrequency(char)} method to validate exception handling on invalid characters.
+     * Tests {@link FrequencyMap#getFrequency(char)} method to validate the proper handling
+     * of invalid characters.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       getFrequency() is invoked with an invalid character (not an English letter).
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       IllegalArgumentException is thrown.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario getFrequency(char) is invoked with an invalid character (non-letter)
+     * @expected IllegalArgumentException is thrown
      */
     @Test
     public void testGetFrequencyOnInvalidCharacter() {
@@ -343,24 +261,16 @@ public class FrequencyMapTest {
 
     }
 
-    // ----*---- Testing isEmpty() ----*----
+    // ------*------ Testing isEmpty() ------*------
 
     /**
-     * Tests {@link FrequencyMap#isEmpty()} method to validate unpopulated Frequency Maps are empty.
+     * Tests {@link FrequencyMap#isEmpty()} method to validate that unpopulated Frequency
+     * Maps are indeed empty.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       isEmpty() is invoked on an empty map.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       a true boolean is returned.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario isEmpty() is invoked on an empty map
+     * @expected a true boolean is returned
      */
     @Test
     public void testIsEmptyOnUnpopulatedMap() {
@@ -378,21 +288,13 @@ public class FrequencyMapTest {
     }
 
     /**
-     * Tests {@link FrequencyMap#isEmpty()} method to validate populated Frequency Maps are non-empty.
+     * Tests {@link FrequencyMap#isEmpty()} method to validate that populated Frequency
+     * Maps are indeed non-empty.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       isEmpty() is invoked on a non-empty map.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       a false boolean is returned.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario isEmpty() is invoked on a non-empty map
+     * @expected a false boolean is returned
      */
     @Test
     public void testIsEmptyOnPopulatedMap() {
@@ -411,24 +313,16 @@ public class FrequencyMapTest {
 
     }
 
-    // ----*---- Testing clear() ----*----
+    // ------*------ Testing clear() ------*------
 
     /**
-     * Tests {@link FrequencyMap#clear()} method to validate unpopulated Frequency Maps are cleared properly.
+     * Tests {@link FrequencyMap#clear()} method to validate that unpopulated Frequency
+     * Maps are cleared properly.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       clear() is invoked on an already-empty map.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       map remains empty.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario clear() is invoked on an already-empty map
+     * @expected the map remains empty
      */
     @Test
     public void testClearOnUnpopulatedMap() {
@@ -447,21 +341,13 @@ public class FrequencyMapTest {
     }
 
     /**
-     * Tests {@link FrequencyMap#clear()} method to validate populated Frequency Maps are cleared properly.
+     * Tests {@link FrequencyMap#clear()} method to validate that populated Frequency
+     * Maps are cleared properly.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       clear() is invoked on a non-empty map.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       map becomes empty, and all frequencies are set to 0.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario clear() is invoked on a non-empty map
+     * @expected the map becomes empty, and all frequencies are set to 0
      */
     @Test
     public void testClearOnPopulatedMap() {

@@ -6,31 +6,23 @@ import org.junit.jupiter.api.Assertions;
 /**
  * Conducts tests on the methods of {@link RGB} using JUnit API.
  * <p>
- * Trivial methods (e.g. standard constructors, setters, getters) are not tested.
- * Only methods with non-linear logic will be tested.
+ * Trivial methods (e.g. standard constructors, setters, or getters) are not tested;
+ * thus, only methods with non-linear logic will be tested.
  * 
  * @author Omar Idris
  */
 public class RGBTest {
 
-    // ----*---- Testing Instantiation ----*----
+    // ------*------ Testing RGB(int, int, int) ------*------
 
     /**
-     * Tests {@link RGB#RGB(int, int, int)} constructor to validate proper instantiation on valid RGB values.
+     * Tests {@link RGB#RGB(int, int, int)} constructor to validate proper instantiation
+     * on valid RGB channel values.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       RGB() is invoked with valid R, G, B values (0, 255).
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       an immutable RGB object is instantiated with the valid values as attributes.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario RGB(int, int, int) is invoked with valid red, green, and blue values
+     * @expected an immutable RGB object is instantiated with the values as attributes
      */
     @Test
     public void testInstantiationOnValidValues() {
@@ -55,21 +47,13 @@ public class RGBTest {
     }
 
     /**
-     * Tests {@link RGB#RGB(int, int, int)} constructor to validate proper instantiation on invalid R values.
+     * Tests {@link RGB#RGB(int, int, int)} constructor to validate the proper handling
+     * of invalid red channel values.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       RGB() is invoked with an invalid R.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       IllegalArgumentException is thrown.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario RGB(int, int, int) is invoked with an invalid red value
+     * @expected IllegalArgumentException is thrown
      */
     @Test
     public void testInstantiationOnInvalidRed() {
@@ -85,21 +69,13 @@ public class RGBTest {
     }
 
     /**
-     * Tests {@link RGB#RGB(int, int, int)} constructor to validate proper instantiation on invalid G values.
+     * Tests {@link RGB#RGB(int, int, int)} constructor to validate the proper handling
+     * of invalid green channel values.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       RGB() is invoked with an invalid G.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       IllegalArgumentException is thrown.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario RGB(int, int, int) is invoked with an invalid green value
+     * @expected IllegalArgumentException is thrown
      */
     @Test
     public void testInstantiationOnInvalidGreen() {
@@ -115,21 +91,13 @@ public class RGBTest {
     }
 
     /**
-     * Tests {@link RGB#RGB(int, int, int)} constructor to validate proper instantiation on invalid B values.
+     * Tests {@link RGB#RGB(int, int, int)} constructor to validate the proper handling
+     * of invalid blue channel values.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       RGB() is invoked with an invalid B.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       IllegalArgumentException is thrown.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario RGB(int, int, int) is invoked with an invalid blue value
+     * @expected IllegalArgumentException is thrown
      */
     @Test
     public void testInstantiationOnInvalidBlue() {

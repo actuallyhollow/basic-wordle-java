@@ -6,32 +6,23 @@ import org.junit.jupiter.api.Assertions;
 /**
  * Conducts tests on the methods of {@link Ansi} using JUnit API.
  * <p>
- * Trivial methods (e.g. standard constructors, setters, getters) are not tested.
- * Only methods with non-linear logic will be tested.
+ * Trivial methods (e.g. standard constructors, setters, or getters) are not tested;
+ * thus, only methods with non-linear logic will be tested.
  * 
  * @author Omar Idris
  */
 public class AnsiTest {
 
-    // ----*---- Testing getBackgroundSequence() ----*----
+    // ------*------ Testing getBackgroundSequence(RGB) ------*------
 
     /**
-     * Tests {@link Ansi#getBackgroundSequence(RGB)} method to validate the conversion of a valid RGB color into
-     * an ANSI background sequence.
+     * Tests {@link Ansi#getBackgroundSequence(RGB)} method to validate the conversion of
+     * a valid RGB color into an ANSI background sequence.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       getBackgroundSequence() is invoked with a valid non-null RGB color.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       a corresponding ANSI background sequence is returned.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario getBackgroundSequence(RGB) is invoked with a valid, non-null RGB color
+     * @expected a corresponding ANSI background sequence is returned
      */
     @Test
     public void testGetBackgroundSequenceOnValidRGB() {
@@ -49,21 +40,13 @@ public class AnsiTest {
     }
 
     /**
-     * Tests {@link Ansi#getBackgroundSequence(RGB)} method to validate proper handling of null RGB colors.
+     * Tests {@link Ansi#getBackgroundSequence(RGB)} method to validate the proper
+     * handling of null RGB colors.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       getBackgroundSequence() is invoked with a null RGB color.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       IllegalArgumentException is thrown.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario getBackgroundSequence(RGB) is invoked with a null RGB color
+     * @expected IllegalArgumentException is thrown
      */
     @Test
     public void testGetBackgroundSequenceOnNullRGB() {
@@ -76,25 +59,16 @@ public class AnsiTest {
 
     }
 
-    // ----*---- Testing getForegroundSequence() ----*----
+    // ------*------ Testing getForegroundSequence(RGB) ------*------
 
     /**
-     * Tests {@link Ansi#getForegroundSequence(RGB)} method to validate the conversion of a valid RGB color into
-     * an ANSI foreground sequence.
+     * Tests {@link Ansi#getForegroundSequence(RGB)} method to validate the conversion of
+     * a valid RGB color into an ANSI foreground sequence.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       getForegroundSequence() is invoked with a valid non-null RGB color.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       a corresponding ANSI foreground sequence is returned.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario getForegroundSequence(RGB) is invoked with a valid, non-null RGB color
+     * @expected a corresponding ANSI foreground sequence is returned
      */
     @Test
     public void testGetForegroundSequenceOnValidRGB() {
@@ -112,21 +86,13 @@ public class AnsiTest {
     }
 
     /**
-     * Tests {@link Ansi#getForegroundSequence(RGB)} method to validate proper handling of null RGB colors.
+     * Tests {@link Ansi#getForegroundSequence(RGB)} method to validate the proper
+     * handling of null RGB colors.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       getForegroundSequence() is invoked with a null RGB color.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       IllegalArgumentException is thrown.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario getForegroundSequence(RGB) is invoked with a null RGB color
+     * @expected IllegalArgumentException is thrown
      */
     @Test
     public void testGetForegroundSequenceOnNullRGB() {

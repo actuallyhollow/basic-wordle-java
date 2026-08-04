@@ -7,34 +7,26 @@ import com.omaridris.wordle.utilities.Ansi;
 import com.omaridris.wordle.utilities.RGB;
 
 /**
- * Conducts tests on the methods of {@link Renderer} using JUnit API, and System Lambda API to intercept console output.
+ * Conducts tests on the methods of {@link Renderer} using JUnit API,
+ * and System Lambda API to intercept console output.
  * <p>
- * Trivial methods (e.g. standard constructors, setters, getters) are not tested.
- * Only methods with non-linear logic will be tested.
+ * Trivial methods (e.g. standard constructors, setters, or getters) are not tested;
+ * thus, only methods with non-linear logic will be tested.
  * 
  * @author Omar Idris
  */
 public class RendererTest {
 
-    // ----*---- Testing print(String) ----*----
+    // ------*------ Testing print(String) ------*------
 
     /**
-     * Tests {@link Renderer#print(String)} method such that it correctly outputs the passed text to the console.
+     * Tests {@link Renderer#print(String)} method to validate that it correctly outputs
+     * the passed text to the console.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       print() is invoked with an arbitrary text.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       The intercepted console output is strictly equal to the passed text.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
+     * @scenario print(String) is invoked with an arbitrary text
+     * @expected the intercepted console output is strictly equal to the passed text
      * @throws Exception if the System Lambda interception fails
      */
     @Test
@@ -53,23 +45,15 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#print(String)} method such that it dynamically prints text
-     * by delaying the output for each character using the default delay.
+     * Tests {@link Renderer#print(String)} method to validate that it dynamically prints
+     * text by delaying the output for each character using the default delay.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       print() is invoked with a standard non-ANSI text to simplify delay calculations.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       print() takes at least (characters * default delay) milliseconds to execute, and takes at most
-     *       the expected time plus a dynamic overhead of 20% or 100ms.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario print(String) is invoked with a standard, non-ANSI text to simplify
+     *           delay calculations
+     * @expected execution takes at least (characters * default delay) milliseconds, and
+     *           at most the expected time plus a dynamic overhead of 20% or 100ms
      */
     @Test
     public void testOverloadedPrintUsesDefaultDelay() {
@@ -91,25 +75,16 @@ public class RendererTest {
 
     }
 
-    // ----*---- Testing print(String, int) ----*----
+    // ------*------ Testing print(String, int) ------*------
 
     /**
-     * Tests {@link Renderer#print(String, int)} method such that it correctly outputs the passed text to the console.
+     * Tests {@link Renderer#print(String, int)} method to validate that it correctly
+     * outputs the passed text to the console.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       print() is invoked with an arbitrary text and a zero-delay to ensure fast execution.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       The intercepted console output is strictly equal to the passed text.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
+     * @scenario print(String, int) is invoked with an arbitrary text and a zero-delay
+     * @expected the intercepted console output is strictly equal to the passed text
      * @throws Exception if the System Lambda interception fails
      */
     @Test
@@ -129,22 +104,13 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#print(String, int)} method such that it safely outputs a null text to the console.
+     * Tests {@link Renderer#print(String, int)} method to validate that it safely
+     * outputs the literal "null" to the console.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       print() is invoked with a null text and a zero-delay to ensure fast execution.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       The intercepted console output displays the literal "null" preventing a NullPointerException.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
+     * @scenario print(String, int) is invoked with a null text and a zero-delay
+     * @expected the intercepted console output displays "null", preventing exceptions
      * @throws Exception if the System Lambda interception fails
      */
     @Test
@@ -164,23 +130,15 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#print(String, int)} method such that it dynamically prints non-ANSI text
-     * by delaying the output for each character.
+     * Tests {@link Renderer#print(String, int)} method to validate that it dynamically
+     * prints non-ANSI text by delaying the output for each character.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       print() is invoked with a standard non-ANSI text and a small delay to ensure fast execution.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       print() takes at least (characters * delay) milliseconds to execute, and takes at most
-     *       the expected time plus a dynamic overhead of 20% or 100ms.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario print(String, int) is invoked with a standard, non-ANSI text and a
+     *           small delay to ensure fast execution
+     * @expected execution takes at least (characters * delay) milliseconds, and at most
+     *           the expected time plus a dynamic overhead of 20% or 100ms
      */
     @Test
     public void testMasterPrintDelayWithNonAnsiText() {
@@ -204,23 +162,14 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#print(String, int)} method such that it instantly prints pure-ANSI text
-     * by immediately outputting all characters of an ANSI sequence.
+     * Tests {@link Renderer#print(String, int)} method to validate that it immediately
+     * prints pure-ANSI text by instantly outputting all characters of an ANSI sequence.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       print() is invoked with an ANSI sequence and a large delay so that a failed skip becomes obvious,
-     *       as the method should theoretically execute in nanoseconds.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       print() takes at least ~0 milliseconds to execute, and takes at most 15ms as CPU overhead.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario print(String, int) is invoked with an ANSI sequence and a large delay
+     *           to expose a failed skip, as execution should take nanoseconds
+     * @expected execution takes at least ~0ms, and at most 15ms as CPU overhead
      */
     @Test
     public void testMasterPrintDelayWithAnsiText() {
@@ -242,23 +191,16 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#print(String, int)} method such that it correctly delays ANSI-embedded text by
-     * dynamically printing the non-ANSI text, and immediately outputting the ANSI sequences.
+     * Tests {@link Renderer#print(String, int)} method to validate that it correctly
+     * delays ANSI-embedded text by dynamically printing the non-ANSI text and
+     * immediately outputting the ANSI sequences.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       print() is invoked with an ANSI-embedded text and a small delay to ensure fast execution.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       print() takes at least (non-ANSI characters * delay) milliseconds to execute, and takes at most
-     *       the expected time plus a dynamic overhead of 20% or 100ms.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario print(String, int) is invoked with an ANSI-embedded text and a small
+     *           delay to ensure fast execution
+     * @expected execution takes at least (non-ANSI characters * delay) milliseconds,
+     *           and at most the expected time plus a dynamic overhead of 20% or 100ms
      */
     @Test
     public void testMasterPrintDelayWithMixedText() {
@@ -283,27 +225,18 @@ public class RendererTest {
 
     }
 
-    // ----*---- Testing printColored(String, RGB) ----*----
+    // ------*------ Testing printColored(String, RGB) ------*------
 
     /**
-     * Tests {@link Renderer#printColored(String, RGB)} method such that it correctly applies the foreground
-     * color to a text and outputs it to the console.
+     * Tests {@link Renderer#printColored(String, RGB)} method to validate that it
+     * correctly applies the foreground color to the text and outputs it to the console.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       printColored() is invoked with an arbitrary text and a valid RGB foreground.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       The intercepted console output starts with the foreground ANSI sequence, contains the text,
-     *       and ends with a reset sequence.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
+     * @scenario printColored(String, RGB) is invoked with an arbitrary text and a valid
+     *           RGB foreground
+     * @expected the intercepted console output starts with the foreground ANSI
+     *           sequence, contains the text, and ends with a reset sequence
      * @throws Exception if the System Lambda interception fails
      */
     @Test
@@ -323,23 +256,16 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#printColored(String, RGB)} method such that it correctly applies the foreground
-     * color to a text and dynamically prints it by delaying the output for each character using the default delay.
+     * Tests {@link Renderer#printColored(String, RGB)} method to validate that it
+     * correctly applies the foreground color to the text and dynamically prints it
+     * by delaying the output for each character using the default delay.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       printColored() is invoked with an arbitrary text and a valid RGB foreground.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       printColored() takes at least (characters * default delay) milliseconds to execute, and takes at most
-     *       the expected time plus a dynamic overhead of 20% or 100ms.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario printColored(String, RGB) is invoked with an arbitrary text and a valid
+     *           RGB foreground
+     * @expected execution takes at least (characters * default delay) milliseconds,
+     *           and at most the expected time plus a dynamic overhead of 20% or 100ms
      */
     @Test
     public void testOverloadedPrintColoredWithForegroundUsesDefaultDelay() {
@@ -362,27 +288,19 @@ public class RendererTest {
 
     }
 
-    // ----*---- Testing printColored(String, RGB, RGB) ----*----
+    // ------*------ Testing printColored(String, RGB, RGB) ------*------
 
     /**
-     * Tests {@link Renderer#printColored(String, RGB, RGB)} method such that it correctly applies both
-     * background and foreground colors to a text and outputs it to the console.
+     * Tests {@link Renderer#printColored(String, RGB, RGB)} method to validate that it
+     * correctly applies both background and foreground colors to the text and outputs it
+     * to the console.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       printColored() is invoked with an arbitrary text and valid RGB objects.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       The intercepted console output starts with both ANSI sequences, contains the text,
-     *       and ends with a reset sequence.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
+     * @scenario printColored(String, RGB, RGB) is invoked with an arbitrary text and
+     *           valid RGB objects
+     * @expected the intercepted console output starts with both ANSI sequences,
+     *           contains the text, and ends with a reset sequence
      * @throws Exception if the System Lambda interception fails
      */
     @Test
@@ -404,24 +322,17 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#printColored(String, RGB, RGB)} method such that it correctly applies both
-     * background and foreground colors to a text and dynamically prints it by delaying the output for
-     * each character using the default delay.
+     * Tests {@link Renderer#printColored(String, RGB, RGB)} method to validate that it
+     * correctly applies both background and foreground colors to the text and
+     * dynamically prints it by delaying the output for each character using the default
+     * delay.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       printColored() is invoked with an arbitrary text and valid RGB objects.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       printColored() takes at least (characters * default delay) milliseconds to execute, and takes at most
-     *       the expected time plus a dynamic overhead of 20% or 100ms.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario printColored(String, RGB, RGB) is invoked with an arbitrary text and
+     *           valid RGB objects
+     * @expected execution takes at least (characters * default delay) milliseconds,
+     *           and at most the expected time plus a dynamic overhead of 20% or 100ms
      */
     @Test
     public void testOverloadedPrintColoredWithBackgroundAndForegroundUsesDefaultDelay() {
@@ -444,26 +355,18 @@ public class RendererTest {
 
     }
 
-    // ----*---- Testing printColored(String, int, RGB, RGB) ----*----
+    // ------*------ Testing printColored(String, int, RGB, RGB) ------*------
 
     /**
-     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method such that it safely outputs a null text to the console.
+     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method to validate that
+     * it safely outputs the literal "null" to the console.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       printColored() is invoked with a null text, a zero-delay, and valid RGB objects.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       The intercepted console output displays the literal "null" preventing a NullPointerException,
-     *       while also applying the active colors and reset sequence.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
+     * @scenario printColored(String, int, RGB, RGB) is invoked with a null text, a
+     *           zero-delay, and valid RGB objects
+     * @expected the intercepted console output displays "null", preventing exceptions,
+     *           while also applying the active colors and reset sequence
      * @throws Exception if the System Lambda interception fails
      */
     @Test
@@ -486,24 +389,16 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method such that it correctly applies both
-     * background and foreground colors to a text and outputs it to the console.
+     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method to validate that
+     * it correctly applies both background and foreground colors to the text and
+     * outputs it to the console.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       printColored() is invoked with an arbitrary text, a zero-delay, and valid RGB objects.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       The intercepted console output starts with both ANSI sequences, contains the text,
-     *       and ends with a reset sequence.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
+     * @scenario printColored(String, int, RGB, RGB) is invoked with an arbitrary text,
+     *           a zero-delay, and valid RGB objects
+     * @expected the intercepted console output starts with both ANSI sequences,
+     *           contains the text, and ends with a reset sequence
      * @throws Exception if the System Lambda interception fails
      */
     @Test
@@ -526,25 +421,16 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method such that it correctly applies only
-     * the background color to a text and outputs it to the console.
+     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method to validate that
+     * it correctly applies only the background color to the text and outputs it
+     * to the console.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       printColored() is invoked with an arbitrary text, a zero-delay, a valid RGB background,
-     *       and a null foreground.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       The intercepted console output starts with only the background ANSI sequence, contains the text,
-     *       and ends with a reset sequence.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
+     * @scenario printColored(String, int, RGB, RGB) is invoked with an arbitrary text,
+     *           a zero-delay, a valid RGB background, and a null foreground
+     * @expected the intercepted console output starts with only the background ANSI
+     *           sequence, contains the text, and ends with a reset sequence
      * @throws Exception if the System Lambda interception fails
      */
     @Test
@@ -567,25 +453,16 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method such that it correctly applies only
-     * the foreground color to a text and outputs it to the console.
+     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method to validate that
+     * it correctly applies only the foreground color to the text and outputs it
+     * to the console.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       printColored() is invoked with an arbitrary text, a zero-delay, a null background,
-     *       and a valid RGB foreground.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       The intercepted console output starts with only the foreground ANSI sequence, contains the text,
-     *       and ends with a reset sequence.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
+     * @scenario printColored(String, int, RGB, RGB) is invoked with an arbitrary text,
+     *           a zero-delay, a null background, and a valid RGB foreground
+     * @expected the intercepted console output starts with only the foreground ANSI
+     *           sequence, contains the text, and ends with a reset sequence
      * @throws Exception if the System Lambda interception fails
      */
     @Test
@@ -608,23 +485,16 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method such that it safely skips null RGB
-     * parameters and outputs the passed text to the console with no applied colors.
+     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method to validate that
+     * it safely skips null RGB parameters and outputs the passed text to the console
+     * with no applied colors.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       printColored() is invoked with an arbitrary text, a zero-delay, and null RGB objects.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       The intercepted console output is strictly equal to the passed text, with no ANSI leakage.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
+     * @scenario printColored(String, int, RGB, RGB) is invoked with an arbitrary text,
+     *           a zero-delay, and null RGB objects
+     * @expected the intercepted console output is strictly equal to the passed text,
+     *           with no ANSI leakage
      * @throws Exception if the System Lambda interception fails
      */
     @Test
@@ -646,23 +516,16 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method such that it prevents color bleeds
-     * caused by newlines by wrapping them in reset sequences and reactivating colors.
+     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method to validate that
+     * it prevents color bleeds caused by newlines by wrapping them in reset sequences
+     * and reactivating colors.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       printColored() is invoked with an arbitrary text containing a '\n' character.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       The intercepted console output replaces every '\n' with reset sequence + '\n' + active colors.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
+     * @scenario printColored(String, int, RGB, RGB) is invoked with an arbitrary text
+     *           containing a '\n' character
+     * @expected the intercepted console output replaces every '\n' with reset sequence +
+     *           '\n' + active colors
      * @throws Exception if the System Lambda interception fails
      */
     @Test

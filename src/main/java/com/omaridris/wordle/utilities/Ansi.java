@@ -1,20 +1,21 @@
 package com.omaridris.wordle.utilities;
 
 /**
- * Performs conversion of RGB values to ANSI sequences.
+ * Converts RGB values to ANSI sequences.
  * <p>
- * This utility class handles the conversion required to print colored text to the terminal using ANSI sequences.
+ * This utility class handles the conversion required to print colored text to the
+ * console using ANSI sequences.
  * <p>
- * Cannot be instantiated, and can only be accessed statically.
+ * It cannot be instantiated and can only be accessed statically.
  * 
  * @author Omar Idris
  */
 public class Ansi {
 
-    // ----*---- Attributes ----*----
+    // ------*------ Attributes ------*------
 
     /**
-     * The universal ANSI sequence to reset terminal text color back to default.
+     * The universal ANSI sequence to reset console text color back to default.
      */
     public static final String RESET = "\u001b[0m";
 
@@ -23,13 +24,13 @@ public class Ansi {
      */
     private Ansi() {}
 
-    // ----*---- Sequence Generators ----*----
+    // ------*------ Sequence Generators ------*------
 
     /**
      * Converts an RGB color to an equivalent ANSI sequence for background coloring.
      * <p>
-     * ANSI background sequences are formatted as "\u005Cu001b[48;2;R;G;Bm", such that "R;G;B" are the values of
-     * the desired color, and "m" is a terminator character.
+     * ANSI background sequences are formatted as "\u005Cu001b[48;2;R;G;Bm", such that
+     * "R;G;B" are the values of the desired color, and "m" is a terminator character.
      * 
      * @param color a valid RGB color
      * @return the equivalent ANSI background sequence
@@ -46,10 +47,10 @@ public class Ansi {
     }
 
     /**
-     * Converts an RGB color to an equivalent ANSI sequence for foreground (text) coloring.
+     * Converts an RGB color to an equivalent ANSI sequence for foreground coloring.
      * <p>
-     * ANSI foreground sequences are formatted as "\u005Cu001b[38;2;R;G;Bm", such that "R;G;B" are the values of
-     * the desired color, and "m" is a terminator character.
+     * ANSI foreground sequences are formatted as "\u005Cu001b[38;2;R;G;Bm", such that
+     * "R;G;B" are the values of the desired color, and "m" is a terminator character.
      * 
      * @param color a valid RGB color
      * @return the equivalent ANSI foreground sequence

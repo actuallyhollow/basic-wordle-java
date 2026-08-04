@@ -5,24 +5,23 @@ import com.omaridris.wordle.utilities.FrequencyMap;
 /**
  * Represents a Word, specifically a 5-letter English word.
  * <p>
- * This class defines the raw text and letter frequency map of a single word, ensuring
- * only 5-letter English words are instantiated.
+ * This class defines the raw text String and letter Frequency Map of a single word;
+ * thus, it ensures only 5-letter English words are instantiated.
  * 
  * @author Omar Idris
  */
 public class Word {
 
-    // ----*---- Attributes ----*----
+    // ------*------ Attributes ------*------
 
     private String text;
     private FrequencyMap frequencyMap;
 
     /**
      * Instantiates a new Word object.
-     * <p>
      * 
-     * @param text the English word.
-     * @throws IllegalArgumentException if the passed text is null, or is not a 5-letter English word
+     * @param text the English word
+     * @throws IllegalArgumentException if text is null or is not a 5-letter English word
      */
     public Word(String text) throws IllegalArgumentException {
 
@@ -34,36 +33,36 @@ public class Word {
 
     }
 
-    // ----*---- Getters / Accessors ----*----
+    // ------*------ Getters / Accessors ------*------
 
     /**
-     * Gets the value of text.
+     * Gets the value of the underlying String text.
      * 
-     * @return The text of the Word
+     * @return the raw text of the Word
      */
     public String getText() {
         return this.text;
     }
 
     /**
-     * Gets the value of frequency map.
+     * Gets the value of the underlying Frequency Map.
      * 
-     * @return The frequency map of the Word
+     * @return the letter Frequency Map of the Word
      */
     public FrequencyMap getFrequencyMap() {
         return this.frequencyMap;
     }
 
-    // ----*---- Helper Methods ----*----
+    // ------*------ Helper Methods ------*------
 
     /**
-     * Validates the Word's text according to a certain criteria.
+     * Validates the Word's raw text according to specific criteria.
      * <p>
-     * The criteria is that the text must be a valid object (not null), and must be exactly 5 letters long.
-     * <p>
+     * The criteria specify that the text must be a valid String object (not null) and
+     * must be exactly 5 letters long.
      * 
-     * @param text the English Word to validate
-     * @throws IllegalArgumentException if the passed text is null, or is not a 5-letter English word
+     * @param text the English word to validate
+     * @throws IllegalArgumentException if text is null or is not a 5-letter English word
      */
     private void validateText(String text) throws IllegalArgumentException {
 
@@ -80,10 +79,10 @@ public class Word {
     }
 
     /**
-     * Iterates over the Word's characters and increment their frequencies.
+     * Iterates over the characters of the Word's raw text and increments their
+     * frequencies in the underlying Frequency Map.
      * <p>
      * It is mutative as it modifies the map's internal state.
-     * <p>
      * 
      * @throws IllegalArgumentException if the character is not an English letter
      */

@@ -6,32 +6,23 @@ import org.junit.jupiter.api.Assertions;
 /**
  * Conducts tests on the methods of {@link Dictionary} using JUnit API.
  * <p>
- * Trivial methods (e.g. standard constructors, setters, getters) are not tested.
- * Only methods with non-linear logic will be tested.
+ * Trivial methods (e.g. standard constructors, setters, or getters) are not tested;
+ * thus, only methods with non-linear logic will be tested.
  * 
  * @author Omar Idris
  */
 public class DictionaryTest {
 
-    // ----*---- Testing Instantiation ----*----
+    // ------*------ Testing Dictionary() ------*------
 
     /**
      * Tests {@link Dictionary#Dictionary()} constructor to validate proper instantiation
      * and loading of the answers file.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       Dictionary() is invoked.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       a Dictionary object is instantiated with all target words loaded.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario Dictionary() is invoked
+     * @expected a Dictionary object is instantiated with all target Words loaded
      */
     @Test
     public void testInstantiation() {
@@ -42,24 +33,16 @@ public class DictionaryTest {
 
     }
 
-    // ----*---- Testing getRandom() ----*----
+    // ------*------ Testing getRandom() ------*------
 
     /**
-     * Tests {@link Dictionary#getRandom()} method to validate retrieval of Words only present in the Dictionary.
+     * Tests {@link Dictionary#getRandom()} method to validate retrieval of Words only
+     * present in the Dictionary.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       getRandom() is invoked.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       a valid randomly selected Word is returned.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario getRandom() is invoked
+     * @expected a valid, randomly selected Word is returned
      */
     @Test
     public void testGetRandomReturnsValidWord() {
@@ -78,23 +61,16 @@ public class DictionaryTest {
     }
     
     /**
-     * Tests {@link Dictionary#getRandom()} method to validate retrieval of Words is random and unpredictable.
+     * Tests {@link Dictionary#getRandom()} method to validate that the retrieval of
+     * Words is random and unpredictable.
      * <p>
-     * While it is technically possible for CSPRNG to select the same Word twice in a row, the odds are 1 in 2,315, or ~0.0432%.
+     * While it is technically possible for CSPRNG to select the same Word twice in a
+     * row, the odds are 1 in 2,315, or ~0.0432%.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       getRandom() is invoked twice.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       two different randomly selected Words are returned.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario getRandom() is invoked twice
+     * @expected two different, randomly selected Words are returned
      */
     @Test
     public void testGetRandomIsUnpredictable() {
@@ -113,24 +89,16 @@ public class DictionaryTest {
 
     }
     
-    // ----*---- Testing isValid() ----*----
+    // ------*------ Testing isValid(Word) ------*------
 
     /**
-     * Tests {@link Dictionary#isValid(Word)} method to validate lookup of valid Words in the Dictionary.
+     * Tests {@link Dictionary#isValid(Word)} method to validate the lookup of valid
+     * Words in the Dictionary.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       isValid() is invoked with a valid Word.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       a true boolean is returned, indicating the Word is indeed valid.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario isValid(Word) is invoked with a valid Word
+     * @expected a true boolean is returned, indicating that the Word is indeed valid
      */
     @Test
     public void testIsValidOnValidWord() {
@@ -150,21 +118,13 @@ public class DictionaryTest {
 
 
     /**
-     * Tests {@link Dictionary#isValid(Word)} method to validate absence of invalid Words in the Dictionary.
+     * Tests {@link Dictionary#isValid(Word)} method to validate the absence of invalid
+     * Words in the Dictionary.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       isValid() is invoked with an invalid Word.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       a false boolean is returned, indicating the Word is indeed invalid.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario isValid(Word) is invoked with an invalid Word
+     * @expected a false boolean is returned, indicating that the Word is indeed invalid
      */
     @Test
     public void testIsValidOnInvalidWord() {
@@ -183,22 +143,13 @@ public class DictionaryTest {
     }
 
     /**
-     * Tests {@link Dictionary#isValid(Word)} method to validate lookup of valid Words in the Dictionary,
-     * regardless of their case.
+     * Tests {@link Dictionary#isValid(Word)} method to validate the lookup of valid
+     * Words in the Dictionary, regardless of their case.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       isValid() is invoked with valid Words of different cases.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       a true boolean is returned for all, indicating that Word case has no effect on validity.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario isValid(Word) is invoked with valid Words of different cases
+     * @expected a true boolean is returned, indicating that Word case is irrelevant
      */
     @Test
     public void testIsValidIgnoresCase() {
@@ -225,21 +176,13 @@ public class DictionaryTest {
     }
 
     /**
-     * Tests {@link Dictionary#isValid(Word)} method to validate proper handling of null Words.
+     * Tests {@link Dictionary#isValid(Word)} method to validate the proper handling of
+     * null Words.
      * <p>
-     * Tests are conducted using the AAA pattern (arrange, act, assert).
-     * <ul><li>
-     *   <b>Scenario:</b>
-     *     <ul><li>
-     *       isValid() is invoked with a null Word.
-     *     </li></ul>
-     * </li></ul>
-     * <ul><li>
-     *   <b>Expected:</b>
-     *     <ul><li>
-     *       IllegalArgumentException is thrown.
-     *     </li></ul>
-     * </li></ul>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario isValid(Word) is invoked with a null Word
+     * @expected IllegalArgumentException is thrown
      */
     @Test
     public void testIsValidOnNullWord() {
