@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import com.github.stefanbirkner.systemlambda.SystemLambda;
 import com.omaridris.wordle.utilities.Ansi;
-import com.omaridris.wordle.utilities.RGB;
+import com.omaridris.wordle.utilities.Rgb;
 
 /**
  * Conducts tests on the methods of {@link Renderer} using JUnit API,
@@ -175,7 +175,7 @@ public class RendererTest {
     public void testMasterPrintDelayWithAnsiText() {
 
         // Arrange
-        String ansiText = Ansi.getForegroundSequence(new RGB(195, 145, 255));
+        String ansiText = Ansi.getForegroundSequence(new Rgb(195, 145, 255));
         int delayPerCharacter = 100;
         long maxDelayMs = 15; 
 
@@ -207,7 +207,7 @@ public class RendererTest {
 
         // Arrange
         String nonAnsiText = "Testing print(String, int)...";
-        String ansiText = Ansi.getForegroundSequence(new RGB(195, 145, 255));
+        String ansiText = Ansi.getForegroundSequence(new Rgb(195, 145, 255));
         String mixedText = ansiText + nonAnsiText + Ansi.RESET;
         int delayPerCharacter = 10;
         long expectedDelayMs = (long)(delayPerCharacter * nonAnsiText.length());
@@ -225,16 +225,16 @@ public class RendererTest {
 
     }
 
-    // ------*------ Testing printColored(String, RGB) ------*------
+    // ------*------ Testing printColored(String, Rgb) ------*------
 
     /**
-     * Tests {@link Renderer#printColored(String, RGB)} method to validate that it
+     * Tests {@link Renderer#printColored(String, Rgb)} method to validate that it
      * correctly applies the foreground color to the text and outputs it to the console.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario printColored(String, RGB) is invoked with an arbitrary text and a valid
-     *           RGB foreground
+     * @scenario printColored(String, Rgb) is invoked with an arbitrary text and a valid
+     *           Rgb foreground
      * @expected the intercepted console output starts with the foreground ANSI
      *           sequence, contains the text, and ends with a reset sequence
      * @throws Exception if the System Lambda interception fails
@@ -243,8 +243,8 @@ public class RendererTest {
     public void testOverloadedPrintColoredWithForegroundOutputsCorrectly() throws Exception {
 
         // Arrange
-        String text = "Testing printColored(String, RGB)...";
-        RGB foreground = new RGB(195, 145, 255);
+        String text = "Testing printColored(String, Rgb)...";
+        Rgb foreground = new Rgb(195, 145, 255);
         String expectedOutput = Ansi.getForegroundSequence(foreground) + text + Ansi.RESET;
 
         // Act
@@ -256,14 +256,14 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#printColored(String, RGB)} method to validate that it
+     * Tests {@link Renderer#printColored(String, Rgb)} method to validate that it
      * correctly applies the foreground color to the text and dynamically prints it
      * by delaying the output for each character using the default delay.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario printColored(String, RGB) is invoked with an arbitrary text and a valid
-     *           RGB foreground
+     * @scenario printColored(String, Rgb) is invoked with an arbitrary text and a valid
+     *           Rgb foreground
      * @expected execution takes at least (characters * default delay) milliseconds,
      *           and at most the expected time plus a dynamic overhead of 20% or 100ms
      */
@@ -271,8 +271,8 @@ public class RendererTest {
     public void testOverloadedPrintColoredWithForegroundUsesDefaultDelay() {
 
         // Arrange
-        String text = "Testing printColored(String, RGB)...";
-        RGB foreground = new RGB(195, 145, 255);
+        String text = "Testing printColored(String, Rgb)...";
+        Rgb foreground = new Rgb(195, 145, 255);
         long expectedDelayMs = (long)(Renderer.DEFAULT_DELAY * text.length());
         long maxDelayMs = expectedDelayMs + Math.max(100L, (long)(expectedDelayMs * 0.20));
 
@@ -288,17 +288,17 @@ public class RendererTest {
 
     }
 
-    // ------*------ Testing printColored(String, RGB, RGB) ------*------
+    // ------*------ Testing printColored(String, Rgb, Rgb) ------*------
 
     /**
-     * Tests {@link Renderer#printColored(String, RGB, RGB)} method to validate that it
+     * Tests {@link Renderer#printColored(String, Rgb, Rgb)} method to validate that it
      * correctly applies both background and foreground colors to the text and outputs it
      * to the console.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario printColored(String, RGB, RGB) is invoked with an arbitrary text and
-     *           valid RGB objects
+     * @scenario printColored(String, Rgb, Rgb) is invoked with an arbitrary text and
+     *           valid Rgb objects
      * @expected the intercepted console output starts with both ANSI sequences,
      *           contains the text, and ends with a reset sequence
      * @throws Exception if the System Lambda interception fails
@@ -307,9 +307,9 @@ public class RendererTest {
     public void testOverloadedPrintColoredWithBackgroundAndForegroundOutputsCorrectly() throws Exception {
 
         // Arrange
-        String text = "Testing printColored(String, RGB, RGB)...";
-        RGB background = new RGB(0, 0, 0);
-        RGB foreground = new RGB(195, 145, 255);
+        String text = "Testing printColored(String, Rgb, Rgb)...";
+        Rgb background = new Rgb(0, 0, 0);
+        Rgb foreground = new Rgb(195, 145, 255);
         String activeColors = Ansi.getBackgroundSequence(background) + Ansi.getForegroundSequence(foreground);
         String expectedOutput = activeColors + text + Ansi.RESET;
 
@@ -322,15 +322,15 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#printColored(String, RGB, RGB)} method to validate that it
+     * Tests {@link Renderer#printColored(String, Rgb, Rgb)} method to validate that it
      * correctly applies both background and foreground colors to the text and
      * dynamically prints it by delaying the output for each character using the default
      * delay.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario printColored(String, RGB, RGB) is invoked with an arbitrary text and
-     *           valid RGB objects
+     * @scenario printColored(String, Rgb, Rgb) is invoked with an arbitrary text and
+     *           valid Rgb objects
      * @expected execution takes at least (characters * default delay) milliseconds,
      *           and at most the expected time plus a dynamic overhead of 20% or 100ms
      */
@@ -338,8 +338,8 @@ public class RendererTest {
     public void testOverloadedPrintColoredWithBackgroundAndForegroundUsesDefaultDelay() {
 
         // Arrange
-        String text = "Testing printColored(String, RGB, RGB)...";
-        RGB foreground = new RGB(195, 145, 255);
+        String text = "Testing printColored(String, Rgb, Rgb)...";
+        Rgb foreground = new Rgb(195, 145, 255);
         long expectedDelayMs = (long)(Renderer.DEFAULT_DELAY * text.length());
         long maxDelayMs = expectedDelayMs + Math.max(100L, (long)(expectedDelayMs * 0.20));
 
@@ -355,16 +355,16 @@ public class RendererTest {
 
     }
 
-    // ------*------ Testing printColored(String, int, RGB, RGB) ------*------
+    // ------*------ Testing printColored(String, int, Rgb, Rgb) ------*------
 
     /**
-     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method to validate that
+     * Tests {@link Renderer#printColored(String, int, Rgb, Rgb)} method to validate that
      * it safely outputs the literal "null" to the console.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario printColored(String, int, RGB, RGB) is invoked with a null text, a
-     *           zero-delay, and valid RGB objects
+     * @scenario printColored(String, int, Rgb, Rgb) is invoked with a null text, a
+     *           zero-delay, and valid Rgb objects
      * @expected the intercepted console output displays "null", preventing exceptions,
      *           while also applying the active colors and reset sequence
      * @throws Exception if the System Lambda interception fails
@@ -374,8 +374,8 @@ public class RendererTest {
 
         // Arrange
         String nullText = null;
-        RGB background = new RGB(0, 0, 0);
-        RGB foreground = new RGB(195, 145, 255);
+        Rgb background = new Rgb(0, 0, 0);
+        Rgb foreground = new Rgb(195, 145, 255);
         int delayPerCharacter = 0;
         String activeColors = Ansi.getBackgroundSequence(background) + Ansi.getForegroundSequence(foreground);
         String expectedOutput = activeColors + "null" + Ansi.RESET;
@@ -389,14 +389,14 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method to validate that
+     * Tests {@link Renderer#printColored(String, int, Rgb, Rgb)} method to validate that
      * it correctly applies both background and foreground colors to the text and
      * outputs it to the console.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario printColored(String, int, RGB, RGB) is invoked with an arbitrary text,
-     *           a zero-delay, and valid RGB objects
+     * @scenario printColored(String, int, Rgb, Rgb) is invoked with an arbitrary text,
+     *           a zero-delay, and valid Rgb objects
      * @expected the intercepted console output starts with both ANSI sequences,
      *           contains the text, and ends with a reset sequence
      * @throws Exception if the System Lambda interception fails
@@ -405,9 +405,9 @@ public class RendererTest {
     public void testMasterPrintColoredWithBothColors() throws Exception {
 
         // Arrange
-        String text = "Testing printColored(String, int, RGB, RGB)...";
-        RGB background = new RGB(0, 0, 0);
-        RGB foreground = new RGB(195, 145, 255);
+        String text = "Testing printColored(String, int, Rgb, Rgb)...";
+        Rgb background = new Rgb(0, 0, 0);
+        Rgb foreground = new Rgb(195, 145, 255);
         int delayPerCharacter = 0;
         String activeColors = Ansi.getBackgroundSequence(background) + Ansi.getForegroundSequence(foreground);
         String expectedOutput = activeColors + text + Ansi.RESET;
@@ -421,14 +421,14 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method to validate that
+     * Tests {@link Renderer#printColored(String, int, Rgb, Rgb)} method to validate that
      * it correctly applies only the background color to the text and outputs it
      * to the console.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario printColored(String, int, RGB, RGB) is invoked with an arbitrary text,
-     *           a zero-delay, a valid RGB background, and a null foreground
+     * @scenario printColored(String, int, Rgb, Rgb) is invoked with an arbitrary text,
+     *           a zero-delay, a valid Rgb background, and a null foreground
      * @expected the intercepted console output starts with only the background ANSI
      *           sequence, contains the text, and ends with a reset sequence
      * @throws Exception if the System Lambda interception fails
@@ -437,9 +437,9 @@ public class RendererTest {
     public void testMasterPrintColoredWithBackgroundOnly() throws Exception {
 
         // Arrange
-        String text = "Testing printColored(String, int, RGB, RGB)...";
-        RGB background = new RGB(0, 0, 0);
-        RGB foreground = null;
+        String text = "Testing printColored(String, int, Rgb, Rgb)...";
+        Rgb background = new Rgb(0, 0, 0);
+        Rgb foreground = null;
         int delayPerCharacter = 0;
         String activeColors = Ansi.getBackgroundSequence(background);
         String expectedOutput = activeColors + text + Ansi.RESET;
@@ -453,14 +453,14 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method to validate that
+     * Tests {@link Renderer#printColored(String, int, Rgb, Rgb)} method to validate that
      * it correctly applies only the foreground color to the text and outputs it
      * to the console.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario printColored(String, int, RGB, RGB) is invoked with an arbitrary text,
-     *           a zero-delay, a null background, and a valid RGB foreground
+     * @scenario printColored(String, int, Rgb, Rgb) is invoked with an arbitrary text,
+     *           a zero-delay, a null background, and a valid Rgb foreground
      * @expected the intercepted console output starts with only the foreground ANSI
      *           sequence, contains the text, and ends with a reset sequence
      * @throws Exception if the System Lambda interception fails
@@ -469,9 +469,9 @@ public class RendererTest {
     public void testMasterPrintColoredWithForegroundOnly() throws Exception {
 
         // Arrange
-        String text = "Testing printColored(String, int, RGB, RGB)...";
-        RGB background = null;
-        RGB foreground = new RGB(195, 145, 255);
+        String text = "Testing printColored(String, int, Rgb, Rgb)...";
+        Rgb background = null;
+        Rgb foreground = new Rgb(195, 145, 255);
         int delayPerCharacter = 0;
         String activeColors = Ansi.getForegroundSequence(foreground);
         String expectedOutput = activeColors + text + Ansi.RESET;
@@ -485,14 +485,14 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method to validate that
-     * it safely skips null RGB parameters and outputs the passed text to the console
+     * Tests {@link Renderer#printColored(String, int, Rgb, Rgb)} method to validate that
+     * it safely skips null Rgb parameters and outputs the passed text to the console
      * with no applied colors.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario printColored(String, int, RGB, RGB) is invoked with an arbitrary text,
-     *           a zero-delay, and null RGB objects
+     * @scenario printColored(String, int, Rgb, Rgb) is invoked with an arbitrary text,
+     *           a zero-delay, and null Rgb objects
      * @expected the intercepted console output is strictly equal to the passed text,
      *           with no ANSI leakage
      * @throws Exception if the System Lambda interception fails
@@ -501,9 +501,9 @@ public class RendererTest {
     public void testMasterPrintColoredWithNullColors() throws Exception {
 
         // Arrange
-        String text = "Testing printColored(String, int, RGB, RGB)...";
-        RGB background = null;
-        RGB foreground = null;
+        String text = "Testing printColored(String, int, Rgb, Rgb)...";
+        Rgb background = null;
+        Rgb foreground = null;
         int delayPerCharacter = 0;
         String expectedOutput = text;
 
@@ -516,13 +516,13 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#printColored(String, int, RGB, RGB)} method to validate that
+     * Tests {@link Renderer#printColored(String, int, Rgb, Rgb)} method to validate that
      * it prevents color bleeds caused by newlines by wrapping them in reset sequences
      * and reactivating colors.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario printColored(String, int, RGB, RGB) is invoked with an arbitrary text
+     * @scenario printColored(String, int, Rgb, Rgb) is invoked with an arbitrary text
      *           containing a '\n' character
      * @expected the intercepted console output replaces every '\n' with reset sequence +
      *           '\n' + active colors
@@ -532,12 +532,12 @@ public class RendererTest {
     public void testMasterPrintColoredPreventsColorBleeds() throws Exception {
 
         // Arrange
-        String text = "Testing\nprintColored(String, int, RGB, RGB)...";
-        RGB background = null;
-        RGB foreground = new RGB(195, 145, 255);
+        String text = "Testing\nprintColored(String, int, Rgb, Rgb)...";
+        Rgb background = null;
+        Rgb foreground = new Rgb(195, 145, 255);
         int delayPerCharacter = 0;
         String activeColors = Ansi.getForegroundSequence(foreground);
-        String expectedOutput = activeColors + "Testing" + Ansi.RESET + "\n" + activeColors + "printColored(String, int, RGB, RGB)..." + Ansi.RESET;
+        String expectedOutput = activeColors + "Testing" + Ansi.RESET + "\n" + activeColors + "printColored(String, int, Rgb, Rgb)..." + Ansi.RESET;
         
         // Act
         String actualOutput = SystemLambda.tapSystemOut(() -> {Renderer.printColored(text, delayPerCharacter, background, foreground);});

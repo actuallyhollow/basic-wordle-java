@@ -1,7 +1,7 @@
 package com.omaridris.wordle.utilities;
 
 /**
- * Converts RGB values to ANSI sequences.
+ * Converts RGB colors to ANSI sequences.
  * <p>
  * This utility class handles the conversion required to print colored text to the
  * console using ANSI sequences.
@@ -32,17 +32,17 @@ public class Ansi {
      * ANSI background sequences are formatted as "\u005Cu001b[48;2;R;G;Bm", such that
      * "R;G;B" are the values of the desired color, and "m" is a terminator character.
      * 
-     * @param color a valid RGB color
+     * @param rgb a valid RGB color
      * @return the equivalent ANSI background sequence
-     * @throws IllegalArgumentException if the passed RGB object is null
+     * @throws IllegalArgumentException if the passed Rgb object is null
      */
-    public static String getBackgroundSequence(RGB color) throws IllegalArgumentException {
+    public static String getBackgroundSequence(Rgb rgb) throws IllegalArgumentException {
 
-        if(color == null) {
-            throw new IllegalArgumentException("RGB object cannot be null.");
+        if(rgb == null) {
+            throw new IllegalArgumentException("Rgb object cannot be null.");
         }
 
-        return String.format("\u001b[48;2;%d;%d;%dm", color.getR(), color.getG(), color.getB());
+        return String.format("\u001b[48;2;%d;%d;%dm", rgb.getRed(), rgb.getGreen(), rgb.getBlue());
 
     }
 
@@ -52,17 +52,17 @@ public class Ansi {
      * ANSI foreground sequences are formatted as "\u005Cu001b[38;2;R;G;Bm", such that
      * "R;G;B" are the values of the desired color, and "m" is a terminator character.
      * 
-     * @param color a valid RGB color
+     * @param rgb a valid RGB color
      * @return the equivalent ANSI foreground sequence
-     * @throws IllegalArgumentException if the passed RGB object is null
+     * @throws IllegalArgumentException if the passed Rgb object is null
      */
-    public static String getForegroundSequence(RGB color) throws IllegalArgumentException {
+    public static String getForegroundSequence(Rgb rgb) throws IllegalArgumentException {
 
-        if(color == null) {
-            throw new IllegalArgumentException("RGB object cannot be null.");
+        if(rgb == null) {
+            throw new IllegalArgumentException("Rgb object cannot be null.");
         }
 
-        return String.format("\u001b[38;2;%d;%d;%dm", color.getR(), color.getG(), color.getB());
+        return String.format("\u001b[38;2;%d;%d;%dm", rgb.getRed(), rgb.getGreen(), rgb.getBlue());
 
     }
 

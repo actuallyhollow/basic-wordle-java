@@ -8,29 +8,29 @@ package com.omaridris.wordle.utilities;
  * 
  * @author Omar Idris
  */
-public class RGB {
+public class Rgb {
 
     // ------*------ Attributes ------*------
 
-    private final int r;
-    private final int g;
-    private final int b;
+    private final int red;
+    private final int green;
+    private final int blue;
 
     /**
-     * Instantiates a new, valid RGB object.
+     * Instantiates a new, valid Rgb object.
      * 
-     * @param r the red value in the RGB
-     * @param g the green value in the RGB
-     * @param b the blue value in the RGB
+     * @param red the red value in the RGB color
+     * @param green the green value in the RGB color
+     * @param blue the blue value in the RGB color
      * @throws IllegalArgumentException if any passed value is out of range (0, 255)
      */
-    public RGB(int r, int g, int b) throws IllegalArgumentException {
+    public Rgb(int red, int green, int blue) throws IllegalArgumentException {
 
-        this.validateRGB(r, g, b);
+        this.validateRgb(red, green, blue);
 
-        this.r = r;
-        this.g = g;
-        this.b = b;
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
 
     }
 
@@ -39,28 +39,28 @@ public class RGB {
     /**
      * Gets the underlying red channel's value.
      * 
-     * @return the red value in the RGB object
+     * @return the red value in the Rgb object
      */
-    public int getR() {
-        return this.r;
+    public int getRed() {
+        return this.red;
     }
 
     /**
      * Gets the underlying green channel's value.
      * 
-     * @return the green value in the RGB object
+     * @return the green value in the Rgb object
      */
-    public int getG() {
-        return this.g;
+    public int getGreen() {
+        return this.green;
     }
 
     /**
      * Gets the underlying blue channel's value.
      * 
-     * @return the blue value in the RGB object
+     * @return the blue value in the Rgb object
      */
-    public int getB() {
-        return this.b;
+    public int getBlue() {
+        return this.blue;
     }
 
     // ------*------ Helper Methods ------*------
@@ -68,21 +68,21 @@ public class RGB {
     /**
      * Checks whether the passed RGB channel values are valid.
      * 
-     * @param r the red value in the RGB
-     * @param g the green value in the RGB
-     * @param b the blue value in the RGB
+     * @param red the red value in the RGB color
+     * @param green the green value in the RGB color
+     * @param blue the blue value in the RGB color
      * @throws IllegalArgumentException if any passed value is out of range (0, 255)
      */
-    private void validateRGB(int r, int g, int b) throws IllegalArgumentException {
+    private void validateRgb(int red, int green, int blue) throws IllegalArgumentException {
 
-        if(r < 0 || r > 255) {
-            throw new IllegalArgumentException("Red value (" + r + ") is not within (0-255)");
+        if(red < 0 || red > 255) {
+            throw new IllegalArgumentException("Red value (" + red + ") is not within (0-255)");
         }
-        if(g < 0 || g > 255) {
-            throw new IllegalArgumentException("Green value (" + g + ") is not within (0-255)");
+        if(green < 0 || green > 255) {
+            throw new IllegalArgumentException("Green value (" + green + ") is not within (0-255)");
         }
-        if(b < 0 || b > 255) {
-            throw new IllegalArgumentException("Blue value (" + b + ") is not within (0-255)");
+        if(blue < 0 || blue > 255) {
+            throw new IllegalArgumentException("Blue value (" + blue + ") is not within (0-255)");
         }
 
     }

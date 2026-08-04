@@ -13,95 +13,95 @@ import org.junit.jupiter.api.Assertions;
  */
 public class AnsiTest {
 
-    // ------*------ Testing getBackgroundSequence(RGB) ------*------
+    // ------*------ Testing getBackgroundSequence(Rgb) ------*------
 
     /**
-     * Tests {@link Ansi#getBackgroundSequence(RGB)} method to validate the conversion of
+     * Tests {@link Ansi#getBackgroundSequence(Rgb)} method to validate the conversion of
      * a valid RGB color into an ANSI background sequence.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario getBackgroundSequence(RGB) is invoked with a valid, non-null RGB color
+     * @scenario getBackgroundSequence(Rgb) is invoked with a valid, non-null Rgb object
      * @expected a corresponding ANSI background sequence is returned
      */
     @Test
-    public void testGetBackgroundSequenceOnValidRGB() {
+    public void testGetBackgroundSequenceOnValidRgb() {
 
         // Arrange
-        RGB validRGB = new RGB(195, 145, 255);
+        Rgb validRgb = new Rgb(195, 145, 255);
         String expectedSequence = "\u001b[48;2;195;145;255m";
 
         // Act
-        String actualSequence = Ansi.getBackgroundSequence(validRGB);
+        String actualSequence = Ansi.getBackgroundSequence(validRgb);
 
         // Assert
-        Assertions.assertEquals(expectedSequence, actualSequence, "A valid RGB should produce the expected ANSI background sequence.");
+        Assertions.assertEquals(expectedSequence, actualSequence, "A valid RGB color should produce the expected ANSI background sequence.");
 
     }
 
     /**
-     * Tests {@link Ansi#getBackgroundSequence(RGB)} method to validate the proper
+     * Tests {@link Ansi#getBackgroundSequence(Rgb)} method to validate the proper
      * handling of null RGB colors.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario getBackgroundSequence(RGB) is invoked with a null RGB color
+     * @scenario getBackgroundSequence(Rgb) is invoked with a null Rgb object
      * @expected IllegalArgumentException is thrown
      */
     @Test
-    public void testGetBackgroundSequenceOnNullRGB() {
+    public void testGetBackgroundSequenceOnNullRgb() {
 
         // Arrange
-        RGB nullRGB = null;
+        Rgb nullRgb = null;
 
         // Act & Assert
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {Ansi.getBackgroundSequence(nullRGB);}, "A null RGB should result in IllegalArgumentException.");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {Ansi.getBackgroundSequence(nullRgb);}, "A null RGB color should result in IllegalArgumentException.");
 
     }
 
-    // ------*------ Testing getForegroundSequence(RGB) ------*------
+    // ------*------ Testing getForegroundSequence(Rgb) ------*------
 
     /**
-     * Tests {@link Ansi#getForegroundSequence(RGB)} method to validate the conversion of
+     * Tests {@link Ansi#getForegroundSequence(Rgb)} method to validate the conversion of
      * a valid RGB color into an ANSI foreground sequence.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario getForegroundSequence(RGB) is invoked with a valid, non-null RGB color
+     * @scenario getForegroundSequence(Rgb) is invoked with a valid, non-null Rgb object
      * @expected a corresponding ANSI foreground sequence is returned
      */
     @Test
-    public void testGetForegroundSequenceOnValidRGB() {
+    public void testGetForegroundSequenceOnValidRgb() {
 
         // Arrange
-        RGB validRGB = new RGB(195, 145, 255);
+        Rgb validRgb = new Rgb(195, 145, 255);
         String expectedSequence = "\u001b[38;2;195;145;255m";
 
         // Act
-        String actualSequence = Ansi.getForegroundSequence(validRGB);
+        String actualSequence = Ansi.getForegroundSequence(validRgb);
 
         // Assert
-        Assertions.assertEquals(expectedSequence, actualSequence, "A valid RGB should produce the expected ANSI foreground sequence.");
+        Assertions.assertEquals(expectedSequence, actualSequence, "A valid RGB color should produce the expected ANSI foreground sequence.");
 
     }
 
     /**
-     * Tests {@link Ansi#getForegroundSequence(RGB)} method to validate the proper
+     * Tests {@link Ansi#getForegroundSequence(Rgb)} method to validate the proper
      * handling of null RGB colors.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario getForegroundSequence(RGB) is invoked with a null RGB color
+     * @scenario getForegroundSequence(Rgb) is invoked with a null Rgb object
      * @expected IllegalArgumentException is thrown
      */
     @Test
-    public void testGetForegroundSequenceOnNullRGB() {
+    public void testGetForegroundSequenceOnNullRgb() {
 
         // Arrange
-        RGB nullRGB = null;
+        Rgb nullRgb = null;
 
         // Act & Assert
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {Ansi.getForegroundSequence(nullRGB);}, "A null RGB should result in IllegalArgumentException.");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {Ansi.getForegroundSequence(nullRgb);}, "A null RGB color should result in IllegalArgumentException.");
 
     }
 

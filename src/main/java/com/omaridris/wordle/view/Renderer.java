@@ -1,7 +1,7 @@
 package com.omaridris.wordle.view;
 
 import com.omaridris.wordle.utilities.Ansi;
-import com.omaridris.wordle.utilities.RGB;
+import com.omaridris.wordle.utilities.Rgb;
 
 /**
  * Renders regular and colored text to the console.
@@ -92,13 +92,13 @@ public class Renderer {
      * Prints text to the console character-by-character with specified foreground RGB
      * color using the default delay of 35 milliseconds as typing speed.
      * <p>
-     * Passing null to the RGB parameter uses the console's default color.
+     * Passing null to the Rgb parameter uses the console's default color.
      * 
      * @param text the String to print
      * @param foreground the RGB color for the foreground (or null to skip)
-     * @see Renderer#printColored(String, int, RGB, RGB)
+     * @see Renderer#printColored(String, int, Rgb, Rgb)
      */
-    public static void printColored(String text, RGB foreground) {
+    public static void printColored(String text, Rgb foreground) {
         Renderer.printColored(text, Renderer.DEFAULT_DELAY, null, foreground);
     }
 
@@ -106,14 +106,14 @@ public class Renderer {
      * Prints text to the console character-by-character with specified background and
      * foreground RGB colors using the default delay of 35 milliseconds as typing speed.
      * <p>
-     * Passing null to either RGB parameter uses the console's default color.
+     * Passing null to either Rgb parameter uses the console's default color.
      * 
      * @param text the String to print
      * @param background the RGB color for the background (or null to skip)
      * @param foreground the RGB color for the foreground (or null to skip)
-     * @see Renderer#printColored(String, int, RGB, RGB)
+     * @see Renderer#printColored(String, int, Rgb, Rgb)
      */
-    public static void printColored(String text, RGB background, RGB foreground) {
+    public static void printColored(String text, Rgb background, Rgb foreground) {
         Renderer.printColored(text, Renderer.DEFAULT_DELAY, background, foreground);
     }
 
@@ -121,7 +121,7 @@ public class Renderer {
      * Prints text to the console character-by-character with specified background and
      * foreground RGB colors using the passed milliseconds delay as typing speed.
      * <p>
-     * Passing null to either RGB parameter uses the console's default color.
+     * Passing null to either Rgb parameter uses the console's default color.
      * <p>
      * An ANSI reset sequence is appended to the end of the String; thus, it ensures
      * console formatting reverts to default when the String is printed, preventing
@@ -132,7 +132,7 @@ public class Renderer {
      * @param background the RGB color for the background (or null to skip)
      * @param foreground the RGB color for the foreground (or null to skip)
      */
-    public static void printColored(String text, int milliseconds, RGB background, RGB foreground) {
+    public static void printColored(String text, int milliseconds, Rgb background, Rgb foreground) {
 
         if(text == null) {
             text = "null";
@@ -147,7 +147,7 @@ public class Renderer {
         String foregroundSequence = (foreground != null) ? Ansi.getForegroundSequence(foreground) : "";
         String activeColors = backgroundSequence + foregroundSequence;
         
-        // Protects against color bleeds caused by '\n' by using RESET, printing '\n', and then reactivating the colors.
+        // Prevents '\n' bleeds by resetting, printing '\n', then reactivating colors.
         String coloredText = text.replace("\n", Ansi.RESET + "\n" + activeColors);
 
         System.out.print(activeColors);

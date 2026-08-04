@@ -83,7 +83,7 @@
         <tspan x="122" dy="18"><tspan class="green">utilities/</tspan><tspan class="comment" x="500"># Helper Structures</tspan></tspan>
         <tspan x="156" dy="18">Ansi.java</tspan>
         <tspan x="156" dy="18">FrequencyMap.java</tspan>
-        <tspan x="156" dy="18">RGB.java</tspan>
+        <tspan x="156" dy="18">Rgb.java</tspan>
         
         <tspan x="122" dy="18"><tspan class="orange">view/</tspan><tspan class="comment" x="500"># I/O and CLI</tspan></tspan>
         <tspan x="156" dy="18">Renderer.java</tspan>
@@ -99,7 +99,7 @@
         <tspan x="122" dy="18"><tspan class="green">utilities/</tspan><tspan class="comment" x="500"># Helper Structures Tests</tspan></tspan>
         <tspan x="156" dy="18">AnsiTest.java</tspan>
         <tspan x="156" dy="18">FrequencyMapTest.java</tspan>
-        <tspan x="156" dy="18">RGBTest.java</tspan>
+        <tspan x="156" dy="18">RgbTest.java</tspan>
         
         <tspan x="122" dy="18"><tspan class="orange">view/</tspan><tspan class="comment" x="500"># I/O and CLI Tests</tspan></tspan>
         <tspan x="156" dy="18">RendererTest.java</tspan>
