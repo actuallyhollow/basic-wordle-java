@@ -15,7 +15,7 @@ public class Word {
     // ------*------ Attributes ------*------
 
     private String text;
-    private FrequencyMap frequencyMap;
+    private FrequencyMap letterFrequencies;
 
     /**
      * Instantiates a new Word object.
@@ -28,8 +28,8 @@ public class Word {
         this.validateText(text);
         this.text = text.toUpperCase().trim();
 
-        this.frequencyMap = new FrequencyMap();
-        this.populateMap();
+        this.letterFrequencies = new FrequencyMap();
+        this.recordFrequencies();
 
     }
 
@@ -45,12 +45,12 @@ public class Word {
     }
 
     /**
-     * Gets the value of the underlying Frequency Map.
+     * Gets the value of the underlying letter Frequency Map.
      * 
-     * @return the letter Frequency Map of the Word
+     * @return the letter frequencies of the Word
      */
-    public FrequencyMap getFrequencyMap() {
-        return this.frequencyMap;
+    public FrequencyMap getLetterFrequencies() {
+        return this.letterFrequencies;
     }
 
     // ------*------ Helper Methods ------*------
@@ -70,9 +70,7 @@ public class Word {
             throw new IllegalArgumentException("Word cannot be null.");
         }
 
-        text = text.toUpperCase().trim();
-
-        if(text.length() != 5) {
+        if(text.trim().length() != 5) {
             throw new IllegalArgumentException("Word must be exactly 5 letters long.");
         }
 
@@ -80,18 +78,18 @@ public class Word {
 
     /**
      * Iterates over the characters of the Word's raw text and increments their
-     * frequencies in the underlying Frequency Map.
+     * frequencies in the underlying letter Frequency Map.
      * <p>
      * It is mutative as it modifies the map's internal state.
      * 
      * @throws IllegalArgumentException if the character is not an English letter
      */
-    private void populateMap() throws IllegalArgumentException {
+    private void recordFrequencies() throws IllegalArgumentException {
 
         char[] characters = this.text.toCharArray();
 
         for(char character : characters) {
-            this.frequencyMap.increment(character);
+            this.letterFrequencies.increment(character);
         }
 
     }

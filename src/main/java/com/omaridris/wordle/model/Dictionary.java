@@ -66,7 +66,7 @@ public class Dictionary {
     public boolean isValid(Word word) throws IllegalArgumentException {
 
         if(word == null) {
-            throw new IllegalArgumentException("Word cannot be null");
+            throw new IllegalArgumentException("Word cannot be null.");
         }
 
         String target = word.getText();

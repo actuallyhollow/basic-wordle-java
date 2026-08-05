@@ -39,7 +39,7 @@ public class WordTest {
         // Act
         Word word = new Word(validText);
         String actualText = word.getText();
-        FrequencyMap frequencies = word.getFrequencyMap();
+        FrequencyMap frequencies = word.getLetterFrequencies();
         int actualFrequencyOfA = frequencies.getFrequency('A');
         int actualFrequencyOfR = frequencies.getFrequency('R');
         int actualFrequencyOfY = frequencies.getFrequency('Y');
@@ -85,7 +85,7 @@ public class WordTest {
      * @expected IllegalArgumentException is thrown
      */
     @Test
-    public void testInstantiationOnInvalidText() {
+    public void testInstantiationOnInvalidRawText() {
 
         // Arrange
         String invalidText = "pointer";
@@ -93,6 +93,27 @@ public class WordTest {
         // Act & Assert
         Assertions.assertThrows(IllegalArgumentException.class, () -> {new Word(invalidText);}, "Invalid text of length not equal to 5 should result in IllegalArgumentException.");
 
+    }
+
+    /**
+     * Tests {@link Word#Word(String)} constructor to validate the proper handling of
+     * text containing whitespaces (non-null String of length equal to 5) that becomes
+     * invalid after trimming.
+     * <p>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario Word(String) is invoked with an invalid text
+     * @expected IllegalArgumentException is thrown
+     */
+    @Test
+    public void testInstantiationOnInvalidWhitespaceText() {
+
+        // Arrange
+        String invalidWhitespaceText = " map ";
+
+        // Act & Assert
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {new Word(invalidWhitespaceText);}, "Invalid whitespace-embedded text of length 5 should get trimmed and result in IllegalArgumentException.");
+        
     }
 
 }
