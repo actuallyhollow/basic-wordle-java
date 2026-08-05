@@ -37,13 +37,18 @@ optimize performance.
 ### 🚀 Compiling ###
 **Setup** - Requires JDK 17 or higher, an IDE (VS Code, IntelliJ, Eclipse).
 ```bash
-# 1. Clone repository and navigate
+# Note for Windows: Swap colons ':' to semicolons ';', and forward slashes '/' to backslashes '\' in any local file paths.
+
+# 1. Clone repository and navigate.
 git clone https://github.com/actuallyhollow/basic-wordle-java.git
 cd basic-wordle-java
 
-# 2. Compile and run
+# 2. Compile and run.
 javac -d bin -sourcepath src/main/java src/main/java/com/omaridris/wordle/Main.java
 java -cp bin com.omaridris.wordle.Main
+
+# 3. (Optional) Generate HTML docs defining the custom test tags.
+javadoc -d docs/src -sourcepath src/main/java:src/test/java -cp "lib/*" -tag scenario:m:"Scenario:" -tag expected:m:"Expected:" -subpackages com.omaridris.wordle
 ```
 
 ### 🛠️ Structure ###
