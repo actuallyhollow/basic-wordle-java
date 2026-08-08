@@ -10,8 +10,8 @@ import com.omaridris.wordle.utilities.Rgb;
  * Conducts tests on the methods of {@link Renderer} using JUnit API,
  * and System Lambda API to intercept console output.
  * <p>
- * Trivial methods (e.g. standard constructors, setters, or getters) are not tested;
- * thus, only methods with non-linear logic will be tested.
+ * Trivial methods (e.g. hardcoded output and direct print statements) are not tested;
+ * thus, only parameterized methods with formatting logic or user input will be tested.
  * 
  * @author Omar Idris
  */
