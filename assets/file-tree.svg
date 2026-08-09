@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Project File Tree Diagram with Vectorized Paths -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 670" width="720" height="670">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" width="720" height="720">
 
     <!-- CSS Definitions for Text and Colors -->
     <style>
@@ -32,24 +32,24 @@
     <g stroke="#A0AABF" stroke-width="1.4" fill="none" stroke-linecap="round">
 
         <!-- Level 1 Lines (Root) -->
-        <path d="M 24 36 V 656 M 24 44 H 46 M 24 134 H 46 M 24 188 H 46 M 24 620 H 46 M 24 638 H 46 M 24 656 H 46"/>
+        <path d="M 24 36 V 692 M 24 44 H 46 M 24 134 H 46 M 24 188 H 46 M 24 656 H 46 M 24 674 H 46 M 24 692 H 46"/>
         
         <!-- Level 2 Lines -->
         <path d="M 58 54 V 116 M 58 62 H 80 M 58 80 H 80 M 58 98 H 80 M 58 116 H 80"/>
         <path d="M 58 144 V 170 M 58 152 H 80 M 58 170 H 80"/>
-        <path d="M 58 198 V 422 M 58 206 H 80 M 58 422 H 80"/>
+        <path d="M 58 198 V 440 M 58 206 H 80 M 58 440 H 80"/>
 
         <!-- Level 3 Lines -->
-        <path d="M 92 216 V 404 M 92 224 H 114 M 92 242 H 114 M 92 296 H 114 M 92 368 H 114 M 92 404 H 114"/>
-        <path d="M 92 432 V 584 M 92 440 H 114 M 92 458 H 114 M 92 512 H 114 M 92 584 H 114"/>
+        <path d="M 92 216 V 422 M 92 224 H 114 M 92 242 H 114 M 92 296 H 114 M 92 368 H 114 M 92 422 H 114"/>
+        <path d="M 92 450 V 602 M 92 458 H 114 M 92 476 H 114 M 92 530 H 114 M 92 602 H 114"/>
 
         <!-- Level 4 Lines -->
         <path d="M 126 252 V 278 M 126 260 H 148 M 126 278 H 148"/>
         <path d="M 126 306 V 350 M 126 314 H 148 M 126 332 H 148 M 126 350 H 148"/>
-        <path d="M 126 378 V 386 M 126 386 H 148"/>
-        <path d="M 126 468 V 494 M 126 476 H 148 M 126 494 H 148"/>
-        <path d="M 126 522 V 566 M 126 530 H 148 M 126 548 H 148 M 126 566 H 148"/>
-        <path d="M 126 594 V 602 M 126 602 H 148"/>
+        <path d="M 126 378 V 404 M 126 386 H 148 M 126 404 H 148"/>
+        <path d="M 126 486 V 512 M 126 494 H 148 M 126 512 H 148"/>
+        <path d="M 126 540 V 584 M 126 548 H 148 M 126 566 H 148 M 126 584 H 148"/>
+        <path d="M 126 612 V 638 M 126 620 H 148 M 126 638 H 148"/>
 
     </g>
 
@@ -86,6 +86,7 @@
         <tspan x="156" dy="18">Rgb.java</tspan>
         
         <tspan x="122" dy="18"><tspan class="orange">view/</tspan><tspan class="comment" x="500"># I/O and CLI</tspan></tspan>
+        <tspan x="156" dy="18" class="new">Display.java</tspan>
         <tspan x="156" dy="18">Renderer.java</tspan>
         <tspan x="122" dy="18">Main.java<tspan class="comment" x="500"># Entry Point</tspan></tspan>
         
@@ -102,6 +103,7 @@
         <tspan x="156" dy="18">RgbTest.java</tspan>
         
         <tspan x="122" dy="18"><tspan class="orange">view/</tspan><tspan class="comment" x="500"># I/O and CLI Tests</tspan></tspan>
+        <tspan x="156" dy="18" class="new">DisplayTest.java</tspan>
         <tspan x="156" dy="18">RendererTest.java</tspan>
         
         <!-- Repository Configuration Files -->
