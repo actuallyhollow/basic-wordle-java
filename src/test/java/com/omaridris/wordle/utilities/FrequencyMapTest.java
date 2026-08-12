@@ -370,4 +370,86 @@ public class FrequencyMapTest {
 
     }
 
+    // ------*------ Testing copy() ------*------
+
+    /**
+     * Tests {@link FrequencyMap#copy()} method to validate that the copied map is a
+     * completely distinct object in memory.
+     * <p>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario copy() is invoked
+     * @expected the copied map has its own unique memory reference
+     */
+    @Test
+    public void testCopyReturnsUniqueMap() {
+
+        // Arrange
+        FrequencyMap originalMap = new FrequencyMap();
+        boolean expectedResult = false;
+
+        // Act
+        FrequencyMap copiedMap = originalMap.copy();
+        boolean actualResult = originalMap == copiedMap;
+
+        // Assert
+        Assertions.assertEquals(expectedResult, actualResult, "The copied map should have a different memory address than the original.");
+
+    }
+
+    /**
+     * Tests {@link FrequencyMap#copy()} method to validate that the copied map contains
+     * the exact same state as the original map at the time of duplication.
+     * <p>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario copy() is invoked
+     * @expected the copied map has the exact same frequencies
+     */
+    @Test
+    public void testCopyReturnsIdenticalMap() {
+
+        // Arrange
+        FrequencyMap originalMap = new FrequencyMap();
+        char letter = 'A';
+        int expectedFrequency = 1;
+
+        // Act
+        originalMap.increment(letter);
+        FrequencyMap copiedMap = originalMap.copy();
+        int actualFrequency = copiedMap.getFrequency(letter);
+
+        // Assert
+        Assertions.assertEquals(expectedFrequency, actualFrequency, "Uppercase 'A' should have a frequency of 1 in the copied map.");
+
+
+    }
+
+    /**
+     * Tests {@link FrequencyMap#copy()} method to validate that the copied map is indeed
+     * a deep copy; thus, it is entirely decoupled from the original.
+     * <p>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario copy() is invoked
+     * @expected modifying the copied map does not affect the original
+     */
+    @Test
+    public void testCopyReturnsIndependentMap() {
+
+        // Arrange
+        FrequencyMap originalMap = new FrequencyMap();
+        char letter = 'A';
+        int expectedFrequency = 0;
+
+        // Act
+        FrequencyMap copiedMap = originalMap.copy();
+        copiedMap.increment(letter);
+        int actualFrequency = originalMap.getFrequency(letter);
+
+        // Assert
+        Assertions.assertEquals(expectedFrequency, actualFrequency, "Uppercase 'A' should still have a frequency of 0 in the original map.");
+
+    }
+
 }

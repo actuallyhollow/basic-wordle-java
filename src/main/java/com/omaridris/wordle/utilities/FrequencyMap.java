@@ -22,7 +22,7 @@ public class FrequencyMap {
      * English alphabet, with all letter frequencies initialized to 0.
      */
     public FrequencyMap() {
-        this.frequencies = new int[ALPHABET_SIZE];
+        this.frequencies = new int[FrequencyMap.ALPHABET_SIZE];
     }
 
     // ------*------ Frequency Modification ------*------
@@ -103,7 +103,23 @@ public class FrequencyMap {
      * It is mutative as it modifies the map's internal state.
      */
     public void clear() {
-        this.frequencies = new int[ALPHABET_SIZE];
+        this.frequencies = new int[FrequencyMap.ALPHABET_SIZE];
+    }
+
+    /**
+     * Instantiates and returns a deep copy of a Frequency Map.
+     * <p>
+     * A deep copy is a completely decoupled duplicate with an entirely new reference;
+     * thus any modifications to the copy will not affect the original map.
+     * <p>
+     * It is non-mutative as it does not modify the map's internal state.
+     * 
+     * @return a new FrequencyMap object with identical character frequencies
+     */
+    public FrequencyMap copy() {
+        FrequencyMap copy = new FrequencyMap();
+        copy.frequencies = this.frequencies.clone();
+        return copy;
     }
 
     // ------*------ Helper Methods ------*------
@@ -122,7 +138,7 @@ public class FrequencyMap {
 
         int index = Character.toUpperCase(character) - 'A';
 
-        if((index < 0) || (index > ALPHABET_SIZE - 1)) {
+        if((index < 0) || (index > FrequencyMap.ALPHABET_SIZE - 1)) {
             throw new IllegalArgumentException("Character \'" + character + "\' must be an English letter.");
         } else {
             return index;
