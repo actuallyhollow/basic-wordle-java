@@ -4,8 +4,7 @@ import java.util.Scanner;
 import com.omaridris.wordle.utilities.Rgb;
 
 /**
- * Displays all visual elements of the Wordle console interface and manages all standard
- * console input.
+ * Represents a Display unit that manages the console's visual output and standard input.
  * <p>
  * This class acts as the View layer in the MVC architecture; thus, it strictly manages
  * both I/O streams and is completely decoupled from any internal logic. It utilizes the

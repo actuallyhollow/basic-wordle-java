@@ -1,10 +1,10 @@
 package com.omaridris.wordle.utilities;
 
 /**
- * Converts RGB colors to ANSI sequences.
+ * Converts RGB colors into ANSI sequences.
  * <p>
- * This utility class handles the conversion required to print colored text to the
- * console using ANSI sequences.
+ * This utility class handles the string translation required to print visually colored
+ * text to the console using ANSI escape sequences.
  * <p>
  * It cannot be instantiated and can only be accessed statically.
  * 
@@ -24,7 +24,7 @@ public class Ansi {
      */
     private Ansi() {}
 
-    // ------*------ Sequence Generators ------*------
+    // ------*------ Sequence Generation ------*------
 
     /**
      * Converts an RGB color to an equivalent ANSI sequence for background coloring.
