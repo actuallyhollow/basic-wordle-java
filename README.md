@@ -4,7 +4,7 @@ actual GUI, while focusing heavily on OOP principles to handle game logic and st
 optimize performance.
 
 ### 🚧 Status ###
-**Work in Progress** - Implementing the View layer and console interface.
+**Work in Progress** - Finalizing domain models and utilities in preparation for transitioning to the Controller layer.
 
 ### 🎯 Goals ###
 1. **Apply OOP Concepts** - Strict encapsulation, class relationships, and abstraction.
