@@ -45,12 +45,12 @@ public class Word {
     }
 
     /**
-     * Gets the value of the underlying letter Frequency Map.
+     * Gets a safe, decoupled copy of the underlying letter Frequency Map.
      * 
-     * @return the letter frequencies of the Word
+     * @return a copy of the letter frequencies of the Word
      */
     public FrequencyMap getLetterFrequencies() {
-        return this.letterFrequencies;
+        return this.letterFrequencies.copy();
     }
 
     // ------*------ Helper Methods ------*------
