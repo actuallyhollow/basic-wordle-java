@@ -16,8 +16,8 @@ public class DictionaryTest {
     // ------*------ Testing Dictionary() ------*------
 
     /**
-     * Tests {@link Dictionary#Dictionary()} constructor to validate proper instantiation
-     * and loading of the answers file.
+     * Tests {@link Dictionary#Dictionary()} constructor to validate the proper
+     * instantiation and loading of the answers file.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
@@ -36,8 +36,8 @@ public class DictionaryTest {
     // ------*------ Testing getRandom() ------*------
 
     /**
-     * Tests {@link Dictionary#getRandom()} method to validate retrieval of Words only
-     * present in the Dictionary.
+     * Tests {@link Dictionary#getRandom()} method to validate that the retrieval returns
+     * a valid Word from the Dictionary.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
@@ -61,8 +61,8 @@ public class DictionaryTest {
     }
     
     /**
-     * Tests {@link Dictionary#getRandom()} method to validate that the retrieval of
-     * Words is random and unpredictable.
+     * Tests {@link Dictionary#getRandom()} method to validate that the retrieval is
+     * random and unpredictable.
      * <p>
      * While it is technically possible for CSPRNG to select the same Word twice in a
      * row, the odds are 1 in 2,315, or ~0.0432%.
@@ -101,7 +101,7 @@ public class DictionaryTest {
      * @expected a true boolean is returned, indicating that the Word is indeed valid
      */
     @Test
-    public void testIsValidOnValidWord() {
+    public void testIsValidWithValidWord() {
 
         // Arrange
         Dictionary dictionary = Assertions.assertDoesNotThrow(() -> {return new Dictionary();});
@@ -127,7 +127,7 @@ public class DictionaryTest {
      * @expected a false boolean is returned, indicating that the Word is indeed invalid
      */
     @Test
-    public void testIsValidOnInvalidWord() {
+    public void testIsValidWithInvalidWord() {
 
         // Arrange
         Dictionary dictionary = Assertions.assertDoesNotThrow(() -> {return new Dictionary();});
@@ -152,7 +152,7 @@ public class DictionaryTest {
      * @expected a true boolean is returned, indicating that Word case is irrelevant
      */
     @Test
-    public void testIsValidIgnoresCase() {
+    public void testIsValidWithMixedCaseWord() {
 
         // Arrange
         Dictionary dictionary = Assertions.assertDoesNotThrow(() -> {return new Dictionary();});
@@ -185,7 +185,7 @@ public class DictionaryTest {
      * @expected IllegalArgumentException is thrown
      */
     @Test
-    public void testIsValidOnNullWord() {
+    public void testIsValidWithNullWord() {
 
         // Arrange
         Dictionary dictionary = Assertions.assertDoesNotThrow(() -> {return new Dictionary();});

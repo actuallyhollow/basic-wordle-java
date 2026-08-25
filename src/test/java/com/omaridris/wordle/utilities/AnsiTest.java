@@ -17,15 +17,15 @@ public class AnsiTest {
 
     /**
      * Tests {@link Ansi#getBackgroundSequence(Rgb)} method to validate the conversion of
-     * a valid RGB color into an ANSI background sequence.
+     * valid RGB colors into ANSI background sequences.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario getBackgroundSequence(Rgb) is invoked with a valid, non-null Rgb object
+     * @scenario getBackgroundSequence(Rgb) is invoked with a valid Rgb object
      * @expected a corresponding ANSI background sequence is returned
      */
     @Test
-    public void testGetBackgroundSequenceOnValidRgb() {
+    public void testGetBackgroundSequenceWithValidRgb() {
 
         // Arrange
         Rgb validRgb = new Rgb(195, 145, 255);
@@ -49,7 +49,7 @@ public class AnsiTest {
      * @expected IllegalArgumentException is thrown
      */
     @Test
-    public void testGetBackgroundSequenceOnNullRgb() {
+    public void testGetBackgroundSequenceWithNullRgb() {
 
         // Arrange
         Rgb nullRgb = null;
@@ -63,15 +63,15 @@ public class AnsiTest {
 
     /**
      * Tests {@link Ansi#getForegroundSequence(Rgb)} method to validate the conversion of
-     * a valid RGB color into an ANSI foreground sequence.
+     * valid RGB colors into ANSI foreground sequences.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario getForegroundSequence(Rgb) is invoked with a valid, non-null Rgb object
+     * @scenario getForegroundSequence(Rgb) is invoked with a valid Rgb object
      * @expected a corresponding ANSI foreground sequence is returned
      */
     @Test
-    public void testGetForegroundSequenceOnValidRgb() {
+    public void testGetForegroundSequenceWithValidRgb() {
 
         // Arrange
         Rgb validRgb = new Rgb(195, 145, 255);
@@ -95,7 +95,7 @@ public class AnsiTest {
      * @expected IllegalArgumentException is thrown
      */
     @Test
-    public void testGetForegroundSequenceOnNullRgb() {
+    public void testGetForegroundSequenceWithNullRgb() {
 
         // Arrange
         Rgb nullRgb = null;

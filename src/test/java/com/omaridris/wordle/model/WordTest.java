@@ -17,8 +17,8 @@ public class WordTest {
     // ------*------ Testing Word(String) ------*------
 
     /**
-     * Tests {@link Word#Word(String)} constructor to validate proper instantiation on
-     * valid text (non-null String of length 5).
+     * Tests {@link Word#Word(String)} constructor to validate the proper instantiation
+     * of Word objects with valid-length text.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
@@ -26,7 +26,7 @@ public class WordTest {
      * @expected a Word object is instantiated with valid text and character frequencies
      */
     @Test
-    public void testInstantiationOnValidText() {
+    public void testInstantiationWithValidText() {
 
         // Arrange
         String validText = "array";
@@ -57,27 +57,7 @@ public class WordTest {
 
     /**
      * Tests {@link Word#Word(String)} constructor to validate the proper handling of
-     * null text.
-     * <p>
-     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
-     * 
-     * @scenario Word(String) is invoked with a null text
-     * @expected IllegalArgumentException is thrown
-     */
-    @Test
-    public void testInstantiationOnNullText() {
-
-        // Arrange
-        String nullText = null;
-
-        // Act & Assert
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {new Word(nullText);}, "Invalid null text should result in IllegalArgumentException.");
-
-    }
-
-    /**
-     * Tests {@link Word#Word(String)} constructor to validate the proper handling of
-     * invalid text (non-null String of length not equal to 5).
+     * invalid-length text.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
@@ -85,7 +65,7 @@ public class WordTest {
      * @expected IllegalArgumentException is thrown
      */
     @Test
-    public void testInstantiationOnInvalidRawText() {
+    public void testInstantiationWithInvalidRawText() {
 
         // Arrange
         String invalidText = "pointer";
@@ -97,16 +77,15 @@ public class WordTest {
 
     /**
      * Tests {@link Word#Word(String)} constructor to validate the proper handling of
-     * text containing whitespaces (non-null String of length equal to 5) that becomes
-     * invalid after trimming.
+     * valid-length text containing whitespaces that, when trimmed, becomes invalid.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario Word(String) is invoked with an invalid text
+     * @scenario Word(String) is invoked with an invalid whitespace-embedded text
      * @expected IllegalArgumentException is thrown
      */
     @Test
-    public void testInstantiationOnInvalidWhitespaceText() {
+    public void testInstantiationWithInvalidWhitespaceText() {
 
         // Arrange
         String invalidWhitespaceText = " map ";
@@ -114,6 +93,26 @@ public class WordTest {
         // Act & Assert
         Assertions.assertThrows(IllegalArgumentException.class, () -> {new Word(invalidWhitespaceText);}, "Invalid whitespace-embedded text of length 5 should get trimmed and result in IllegalArgumentException.");
         
+    }
+
+    /**
+     * Tests {@link Word#Word(String)} constructor to validate the proper handling of
+     * null text.
+     * <p>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario Word(String) is invoked with a null text
+     * @expected IllegalArgumentException is thrown
+     */
+    @Test
+    public void testInstantiationWithNullText() {
+
+        // Arrange
+        String nullText = null;
+
+        // Act & Assert
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {new Word(nullText);}, "Invalid null text should result in IllegalArgumentException.");
+
     }
 
 }

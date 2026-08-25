@@ -104,32 +104,6 @@ public class RendererTest {
     }
 
     /**
-     * Tests {@link Renderer#print(String, int)} method to validate that it safely
-     * outputs the literal "null" to the console.
-     * <p>
-     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
-     * 
-     * @scenario print(String, int) is invoked with a null text and a zero-delay
-     * @expected the intercepted console output displays "null", preventing exceptions
-     * @throws Exception if the System Lambda interception fails
-     */
-    @Test
-    public void testMasterPrintHandlesNullText() throws Exception {
-
-        // Arrange
-        String nullText = null;
-        int delayPerCharacter = 0;
-        String expectedOutput = "null";
-        
-        // Act
-        String actualOutput = SystemLambda.tapSystemOut(() -> {Renderer.print(nullText, delayPerCharacter);});
-        
-        // Assert
-        Assertions.assertEquals(expectedOutput, actualOutput, "Null text should be safely printed as the literal \"null\".");
-
-    }
-
-    /**
      * Tests {@link Renderer#print(String, int)} method to validate that it dynamically
      * prints non-ANSI text by delaying the output for each character.
      * <p>
@@ -222,6 +196,32 @@ public class RendererTest {
         // Assert
         Assertions.assertTrue(actualDelayMs >= expectedDelayMs, String.format("Execution too fast. Took %.2fms, expected at least %dms.", actualDelayMs, expectedDelayMs));
         Assertions.assertTrue(actualDelayMs <= maxDelayMs, String.format("Execution too slow. Took %.2fms, allowed at most %dms.", actualDelayMs, maxDelayMs));
+
+    }
+
+    /**
+     * Tests {@link Renderer#print(String, int)} method to validate that it safely
+     * outputs the literal "null" to the console.
+     * <p>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario print(String, int) is invoked with a null text and a zero-delay
+     * @expected the intercepted console output displays "null", preventing exceptions
+     * @throws Exception if the System Lambda interception fails
+     */
+    @Test
+    public void testMasterPrintWithNullText() throws Exception {
+
+        // Arrange
+        String nullText = null;
+        int delayPerCharacter = 0;
+        String expectedOutput = "null";
+        
+        // Act
+        String actualOutput = SystemLambda.tapSystemOut(() -> {Renderer.print(nullText, delayPerCharacter);});
+        
+        // Assert
+        Assertions.assertEquals(expectedOutput, actualOutput, "Null text should be safely printed as the literal \"null\".");
 
     }
 
@@ -359,37 +359,6 @@ public class RendererTest {
 
     /**
      * Tests {@link Renderer#printColored(String, int, Rgb, Rgb)} method to validate that
-     * it safely outputs the literal "null" to the console.
-     * <p>
-     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
-     * 
-     * @scenario printColored(String, int, Rgb, Rgb) is invoked with a null text, a
-     *           zero-delay, and valid Rgb objects
-     * @expected the intercepted console output displays "null", preventing exceptions,
-     *           while also applying the active colors and reset sequence
-     * @throws Exception if the System Lambda interception fails
-     */
-    @Test
-    public void testMasterPrintColoredHandlesNullText() throws Exception {
-
-        // Arrange
-        String nullText = null;
-        Rgb background = new Rgb(0, 0, 0);
-        Rgb foreground = new Rgb(195, 145, 255);
-        int delayPerCharacter = 0;
-        String activeColors = Ansi.getBackgroundSequence(background) + Ansi.getForegroundSequence(foreground);
-        String expectedOutput = activeColors + "null" + Ansi.RESET;
-        
-        // Act
-        String actualOutput = SystemLambda.tapSystemOut(() -> {Renderer.printColored(nullText, delayPerCharacter, background, foreground);});
-        
-        // Assert
-        Assertions.assertEquals(expectedOutput, actualOutput, "Null text should be safely printed as the literal \"null\", while also containing the active colors and reset sequence.");
-
-    }
-
-    /**
-     * Tests {@link Renderer#printColored(String, int, Rgb, Rgb)} method to validate that
      * it correctly applies both background and foreground colors to the text and
      * outputs it to the console.
      * <p>
@@ -486,37 +455,6 @@ public class RendererTest {
 
     /**
      * Tests {@link Renderer#printColored(String, int, Rgb, Rgb)} method to validate that
-     * it safely skips null Rgb parameters and outputs the passed text to the console
-     * with no applied colors.
-     * <p>
-     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
-     * 
-     * @scenario printColored(String, int, Rgb, Rgb) is invoked with an arbitrary text,
-     *           a zero-delay, and null Rgb objects
-     * @expected the intercepted console output is strictly equal to the passed text,
-     *           with no ANSI leakage
-     * @throws Exception if the System Lambda interception fails
-     */
-    @Test
-    public void testMasterPrintColoredWithNullColors() throws Exception {
-
-        // Arrange
-        String text = "Testing printColored(String, int, Rgb, Rgb)...";
-        Rgb background = null;
-        Rgb foreground = null;
-        int delayPerCharacter = 0;
-        String expectedOutput = text;
-
-        // Act
-        String actualOutput = SystemLambda.tapSystemOut(() -> {Renderer.printColored(text, delayPerCharacter, background, foreground);});
-        
-        // Assert
-        Assertions.assertEquals(expectedOutput, actualOutput, "The text printed to the console should match the passed text.");
-
-    }
-
-    /**
-     * Tests {@link Renderer#printColored(String, int, Rgb, Rgb)} method to validate that
      * it prevents color bleeds caused by newlines by wrapping them in reset sequences
      * and reactivating colors.
      * <p>
@@ -544,6 +482,68 @@ public class RendererTest {
 
         // Assert
         Assertions.assertEquals(expectedOutput, actualOutput, "The text printed to the console should not contain color bleeds.");
+
+    }
+
+    /**
+     * Tests {@link Renderer#printColored(String, int, Rgb, Rgb)} method to validate that
+     * it safely outputs the literal "null" to the console.
+     * <p>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario printColored(String, int, Rgb, Rgb) is invoked with a null text, a
+     *           zero-delay, and valid Rgb objects
+     * @expected the intercepted console output displays "null", preventing exceptions,
+     *           while also applying the active colors and reset sequence
+     * @throws Exception if the System Lambda interception fails
+     */
+    @Test
+    public void testMasterPrintColoredWithNullText() throws Exception {
+
+        // Arrange
+        String nullText = null;
+        Rgb background = new Rgb(0, 0, 0);
+        Rgb foreground = new Rgb(195, 145, 255);
+        int delayPerCharacter = 0;
+        String activeColors = Ansi.getBackgroundSequence(background) + Ansi.getForegroundSequence(foreground);
+        String expectedOutput = activeColors + "null" + Ansi.RESET;
+        
+        // Act
+        String actualOutput = SystemLambda.tapSystemOut(() -> {Renderer.printColored(nullText, delayPerCharacter, background, foreground);});
+        
+        // Assert
+        Assertions.assertEquals(expectedOutput, actualOutput, "Null text should be safely printed as the literal \"null\", while also containing the active colors and reset sequence.");
+
+    }
+
+    /**
+     * Tests {@link Renderer#printColored(String, int, Rgb, Rgb)} method to validate that
+     * it safely skips null Rgb parameters and outputs the passed text to the console
+     * with no applied colors.
+     * <p>
+     * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
+     * 
+     * @scenario printColored(String, int, Rgb, Rgb) is invoked with an arbitrary text,
+     *           a zero-delay, and null Rgb objects
+     * @expected the intercepted console output is strictly equal to the passed text,
+     *           with no ANSI leakage
+     * @throws Exception if the System Lambda interception fails
+     */
+    @Test
+    public void testMasterPrintColoredWithNullColors() throws Exception {
+
+        // Arrange
+        String text = "Testing printColored(String, int, Rgb, Rgb)...";
+        Rgb background = null;
+        Rgb foreground = null;
+        int delayPerCharacter = 0;
+        String expectedOutput = text;
+
+        // Act
+        String actualOutput = SystemLambda.tapSystemOut(() -> {Renderer.printColored(text, delayPerCharacter, background, foreground);});
+        
+        // Assert
+        Assertions.assertEquals(expectedOutput, actualOutput, "The text printed to the console should match the passed text.");
 
     }
 

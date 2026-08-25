@@ -16,8 +16,8 @@ public class RgbTest {
     // ------*------ Testing Rgb(int, int, int) ------*------
 
     /**
-     * Tests {@link Rgb#Rgb(int, int, int)} constructor to validate proper instantiation
-     * on valid RGB channel values.
+     * Tests {@link Rgb#Rgb(int, int, int)} constructor to validate the proper
+     * instantiation of Rgb objects with valid RGB channel values.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
@@ -25,7 +25,7 @@ public class RgbTest {
      * @expected an immutable Rgb object is instantiated with the values as attributes
      */
     @Test
-    public void testInstantiationOnValidValues() {
+    public void testInstantiationWithValidValues() {
 
         // Arrange
         int validRed = 195;
@@ -56,7 +56,7 @@ public class RgbTest {
      * @expected IllegalArgumentException is thrown
      */
     @Test
-    public void testInstantiationOnInvalidRed() {
+    public void testInstantiationWithInvalidRed() {
 
         // Arrange
         int invalidRed = 315;
@@ -78,7 +78,7 @@ public class RgbTest {
      * @expected IllegalArgumentException is thrown
      */
     @Test
-    public void testInstantiationOnInvalidGreen() {
+    public void testInstantiationWithInvalidGreen() {
 
         // Arrange
         int validRed = 195;
@@ -100,7 +100,7 @@ public class RgbTest {
      * @expected IllegalArgumentException is thrown
      */
     @Test
-    public void testInstantiationOnInvalidBlue() {
+    public void testInstantiationWithInvalidBlue() {
 
         // Arrange
         int validRed = 195;

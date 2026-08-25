@@ -16,8 +16,8 @@ public class FrequencyMapTest {
     // ------*------ Testing increment(char) ------*------
 
     /**
-     * Tests {@link FrequencyMap#increment(char)} method to validate that frequency
-     * increases on uppercase letters.
+     * Tests {@link FrequencyMap#increment(char)} method to validate frequency increase
+     * with uppercase letters.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
@@ -25,7 +25,7 @@ public class FrequencyMapTest {
      * @expected the frequency of the letter increases by 1
      */
     @Test
-    public void testIncrementOnUppercaseLetter() {
+    public void testIncrementWithUppercaseLetter() {
 
         // Arrange
         FrequencyMap frequencyMap = new FrequencyMap();
@@ -42,8 +42,8 @@ public class FrequencyMapTest {
     }
 
     /**
-     * Tests {@link FrequencyMap#increment(char)} method to validate that frequency
-     * increases on lowercase letters.
+     * Tests {@link FrequencyMap#increment(char)} method to validate frequency increase
+     * with lowercase letters.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
@@ -51,7 +51,7 @@ public class FrequencyMapTest {
      * @expected the frequency of the letter increases by 1
      */
     @Test
-    public void testIncrementOnLowercaseLetter() {
+    public void testIncrementWithLowercaseLetter() {
 
         // Arrange
         FrequencyMap frequencyMap = new FrequencyMap();
@@ -73,11 +73,11 @@ public class FrequencyMapTest {
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario increment(char) is invoked with an invalid character (non-letter)
+     * @scenario increment(char) is invoked with a non-letter character
      * @expected IllegalArgumentException is thrown
      */
     @Test
-    public void testIncrementOnInvalidCharacter() {
+    public void testIncrementWithInvalidCharacter() {
 
         // Arrange
         FrequencyMap frequencyMap = new FrequencyMap();
@@ -91,8 +91,8 @@ public class FrequencyMapTest {
     // ------*------ Testing decrement(char) ------*------
 
     /**
-     * Tests {@link FrequencyMap#decrement(char)} method to validate that frequency
-     * decreases on uppercase letters.
+     * Tests {@link FrequencyMap#decrement(char)} method to validate frequency decrease
+     * with uppercase letters.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
@@ -100,7 +100,7 @@ public class FrequencyMapTest {
      * @expected the frequency of the letter decreases by 1
      */
     @Test
-    public void testDecrementOnUppercaseLetter() {
+    public void testDecrementWithUppercaseLetter() {
 
         // Arrange
         FrequencyMap frequencyMap = new FrequencyMap();
@@ -119,8 +119,8 @@ public class FrequencyMapTest {
     }
 
     /**
-     * Tests {@link FrequencyMap#decrement(char)} method to validate that frequency
-     * decreases on lowercase letters.
+     * Tests {@link FrequencyMap#decrement(char)} method to validate frequency decrease
+     * with lowercase letters.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
@@ -128,7 +128,7 @@ public class FrequencyMapTest {
      * @expected the frequency of the letter decreases by 1
      */
     @Test
-    public void testDecrementOnLowercaseLetter() {
+    public void testDecrementWithLowercaseLetter() {
 
         // Arrange
         FrequencyMap frequencyMap = new FrequencyMap();
@@ -148,15 +148,15 @@ public class FrequencyMapTest {
 
     /**
      * Tests {@link FrequencyMap#decrement(char)} method to validate the proper handling
-     * of decreasing letters that have no recorded frequency.
+     * of letters that have no recorded frequency.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario decrement(char) is invoked with a zero-frequency letter
+     * @scenario decrement(char) is invoked with an unrecorded letter
      * @expected IllegalStateException is thrown
      */
     @Test
-    public void testDecrementOnLetterWithNoFrequency() {
+    public void testDecrementWithUnrecordedLetter() {
 
         // Arrange
         FrequencyMap frequencyMap = new FrequencyMap();
@@ -173,11 +173,11 @@ public class FrequencyMapTest {
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario decrement(char) is invoked with an invalid character (non-letter)
+     * @scenario decrement(char) is invoked with a non-letter character
      * @expected IllegalArgumentException is thrown
      */
     @Test
-    public void testDecrementOnInvalidCharacter() {
+    public void testDecrementWithInvalidCharacter() {
 
         // Arrange
         FrequencyMap frequencyMap = new FrequencyMap();
@@ -192,7 +192,7 @@ public class FrequencyMapTest {
 
     /**
      * Tests {@link FrequencyMap#getFrequency(char)} method to validate frequency access
-     * on uppercase letters.
+     * with uppercase letters.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
@@ -200,7 +200,7 @@ public class FrequencyMapTest {
      * @expected the frequency of the letter is returned
      */
     @Test
-    public void testGetFrequencyOnUppercaseLetter() {
+    public void testGetFrequencyWithUppercaseLetter() {
 
         // Arrange
         FrequencyMap frequencyMap = new FrequencyMap();
@@ -217,7 +217,7 @@ public class FrequencyMapTest {
 
     /**
      * Tests {@link FrequencyMap#getFrequency(char)} method to validate frequency access
-     * on lowercase letters.
+     * with lowercase letters.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
@@ -225,7 +225,7 @@ public class FrequencyMapTest {
      * @expected the frequency of the letter is returned
      */
     @Test
-    public void testGetFrequencyOnLowercaseLetter() {
+    public void testGetFrequencyWithLowercaseLetter() {
 
         // Arrange
         FrequencyMap frequencyMap = new FrequencyMap();
@@ -246,11 +246,11 @@ public class FrequencyMapTest {
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
-     * @scenario getFrequency(char) is invoked with an invalid character (non-letter)
+     * @scenario getFrequency(char) is invoked with a non-letter character
      * @expected IllegalArgumentException is thrown
      */
     @Test
-    public void testGetFrequencyOnInvalidCharacter() {
+    public void testGetFrequencyWithInvalidCharacter() {
 
         // Arrange
         FrequencyMap frequencyMap = new FrequencyMap();
