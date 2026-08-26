@@ -10,11 +10,11 @@ import com.omaridris.wordle.utilities.Rgb;
  * character-by-character rendering, and the proper formatting of colored text using ANSI
  * escape sequences.
  * <p>
- * It cannot be instantiated and can only be statically accessed.
+ * It cannot be extended or instantiated and can only be statically accessed.
  * 
  * @author Omar Idris
  */
-public class Renderer {
+public final class Renderer {
 
     // ------*------ Attributes ------*------
 
@@ -25,8 +25,12 @@ public class Renderer {
 
     /**
      * Prevents instantiation of new Renderer objects.
+     * 
+     * @throws UnsupportedOperationException if instantiated internally or by Reflection.
      */
-    private Renderer() {}
+    private Renderer() throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Renderer objects should not be instantiated.");
+    }
 
     // ------*------ Text Rendering ------*------
 

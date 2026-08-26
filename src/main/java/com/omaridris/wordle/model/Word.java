@@ -3,19 +3,21 @@ package com.omaridris.wordle.model;
 import com.omaridris.wordle.utilities.FrequencyMap;
 
 /**
- * Represents a Word, specifically a 5-letter English word.
+ * Represents an immutable, 5-letter English Word.
  * <p>
- * This class defines the raw text String and letter Frequency Map of a single word;
+ * This class defines the raw text String and letter Frequency Map of a single Word;
  * thus, it ensures only 5-letter English words are instantiated.
+ * <p>
+ * It cannot be extended and can only be directly instantiated.
  * 
  * @author Omar Idris
  */
-public class Word {
+public final class Word {
 
     // ------*------ Attributes ------*------
 
-    private String text;
-    private FrequencyMap letterFrequencies;
+    private final String text;
+    private final FrequencyMap letterFrequencies;
 
     /**
      * Instantiates a new Word object.

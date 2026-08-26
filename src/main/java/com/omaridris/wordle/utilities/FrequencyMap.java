@@ -5,10 +5,12 @@ package com.omaridris.wordle.utilities;
  * <p>
  * This Data Structure specializes in tracking the frequencies of English letters;
  * thus, it achieves O(1) time complexity for all operations using direct array indexing.
+ * <p>
+ * It cannot be extended and can only be directly instantiated.
  * 
  * @author Omar Idris
  */
-public class FrequencyMap {
+public final class FrequencyMap {
 
     // ------*------ Attributes ------*------
 
@@ -53,7 +55,7 @@ public class FrequencyMap {
 
         int index = this.getIndex(character);
         
-        if(this.frequencies[index] == 0) {
+        if(this.frequencies[index] <= 0) {
             throw new IllegalStateException("Cannot decrement: No occurrences of \'" + character + "\' left.");
         } else {
             this.frequencies[index]--;

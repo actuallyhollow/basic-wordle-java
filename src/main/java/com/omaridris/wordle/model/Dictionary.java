@@ -7,18 +7,20 @@ import java.io.FileNotFoundException;
 import java.security.SecureRandom;
 
 /**
- * Represents a Dictionary containing all valid Words for both game targets and guesses.
+ * Represents an immutable Dictionary containing all valid target and guess Words.
  * <p>
  * This class defines the underlying answers List containing the Words' raw Strings,
  * a CSPRNG-based retrieval for a target Word, and O(log n) validation for user guesses.
+ * <p>
+ * It cannot be extended and can only be directly instantiated.
  * 
  * @author Omar Idris
  */
-public class Dictionary {
+public final class Dictionary {
 
     // ------*------ Attributes ------*------
 
-    private ArrayList<String> answers;
+    private final ArrayList<String> answers;
 
     /**
      * Instantiates a new Dictionary object.

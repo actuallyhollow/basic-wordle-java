@@ -5,10 +5,12 @@ package com.omaridris.wordle.utilities;
  * <p>
  * This class defines the three 8-bit color channels; thus, it ensures valid RGB
  * values per channel.
+ * <p>
+ * It cannot be extended and can only be directly instantiated.
  * 
  * @author Omar Idris
  */
-public class Rgb {
+public final class Rgb {
 
     // ------*------ Attributes ------*------
 

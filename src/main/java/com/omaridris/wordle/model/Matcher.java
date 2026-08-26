@@ -9,11 +9,11 @@ import com.omaridris.wordle.utilities.FrequencyMap;
  * the underlying {@link FrequencyMap} data structure, it ensures linear performance and
  * precise letter frequency tracking; thus, it correctly processes duplicate letters.
  * <p>
- * It cannot be instantiated and can only be accessed statically.
+ * It cannot be extended or instantiated and can only be statically accessed.
  * 
  * @author Omar Idris
  */
-public class Matcher {
+public final class Matcher {
 
     // ------*------ Nested Types ------*------
 
@@ -53,8 +53,12 @@ public class Matcher {
 
     /**
      * Prevents instantiation of new Matcher objects.
+     * 
+     * @throws UnsupportedOperationException if instantiated internally or by Reflection.
      */
-    private Matcher() {}
+    private Matcher() throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Matcher objects should not be instantiated.");
+    }
 
     // ------*------ State Evaluation ------*------
 

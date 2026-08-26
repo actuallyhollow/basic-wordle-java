@@ -6,11 +6,11 @@ package com.omaridris.wordle.utilities;
  * This utility class handles the string translation required to print visually colored
  * text to the console using ANSI escape sequences.
  * <p>
- * It cannot be instantiated and can only be accessed statically.
+ * It cannot be extended or instantiated and can only be statically accessed.
  * 
  * @author Omar Idris
  */
-public class Ansi {
+public final class Ansi {
 
     // ------*------ Attributes ------*------
 
@@ -21,8 +21,12 @@ public class Ansi {
 
     /**
      * Prevents instantiation of new Ansi objects.
+     * 
+     * @throws UnsupportedOperationException if instantiated internally or by Reflection.
      */
-    private Ansi() {}
+    private Ansi() throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Ansi objects should not be instantiated.");
+    }
 
     // ------*------ Sequence Generation ------*------
 

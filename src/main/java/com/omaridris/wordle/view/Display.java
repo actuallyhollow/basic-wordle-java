@@ -9,14 +9,14 @@ import com.omaridris.wordle.utilities.Rgb;
  * This class acts as the View layer in the MVC architecture; thus, it strictly manages
  * both I/O streams and is completely decoupled from any internal logic. It utilizes the
  * API provided by {@link Renderer} to display and render text, including support for
- * colored console output.
+ * colored console output. Unless otherwise specified, all methods in this class
+ * implicitly append a newline character '\n' to the console
  * <p>
- * Unless otherwise specified, all methods in this class implicitly append a newline
- * character '\n' to the console.
+ * It cannot be extended and can only be directly instantiated.
  * 
  * @author Omar Idris
  */
-public class Display {
+public final class Display {
 
     // ------*------ Attributes ------*------
 
@@ -26,7 +26,7 @@ public class Display {
     private static final Rgb RED = new Rgb(160, 50, 50);
     private static final int SEPARATOR_LENGTH = 70;
     private static final int SEPARATOR_DELAY = 10;
-    private Scanner scanner;
+    private final Scanner scanner;
 
     /**
      * Instantiates a new Display object.
