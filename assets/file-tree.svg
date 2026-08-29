@@ -78,7 +78,7 @@
         <tspan x="122" dy="18"><tspan class="yellow">controller/</tspan><tspan class="comment" x="500"># Game Logic</tspan></tspan>
         <tspan x="122" dy="18"><tspan class="red">model/</tspan><tspan class="comment" x="500"># Custom Datatypes</tspan></tspan>
         <tspan x="156" dy="18">Dictionary.java</tspan>
-        <tspan x="156" dy="18" class="new">Matcher.java</tspan>
+        <tspan x="156" dy="18">Matcher.java</tspan>
         <tspan x="156" dy="18">Word.java</tspan>
         
         <tspan x="122" dy="18"><tspan class="green">utilities/</tspan><tspan class="comment" x="500"># Helper Structures</tspan></tspan>
@@ -87,7 +87,7 @@
         <tspan x="156" dy="18">Rgb.java</tspan>
         
         <tspan x="122" dy="18"><tspan class="orange">view/</tspan><tspan class="comment" x="500"># I/O and CLI</tspan></tspan>
-        <tspan x="156" dy="18">Display.java</tspan>
+        <tspan x="156" dy="18" class="new">Formatter.java</tspan>
         <tspan x="156" dy="18">Renderer.java</tspan>
         <tspan x="122" dy="18">Main.java<tspan class="comment" x="500"># Entry Point</tspan></tspan>
         
@@ -96,7 +96,7 @@
         <tspan x="122" dy="18"><tspan class="yellow">controller/</tspan><tspan class="comment" x="500"># Game Logic Tests</tspan></tspan>
         <tspan x="122" dy="18"><tspan class="red">model/</tspan><tspan class="comment" x="500"># Custom Datatypes Tests</tspan></tspan>
         <tspan x="156" dy="18">DictionaryTest.java</tspan>
-        <tspan x="156" dy="18" class="new">MatcherTest.java</tspan>
+        <tspan x="156" dy="18">MatcherTest.java</tspan>
         <tspan x="156" dy="18">WordTest.java</tspan>
         
         <tspan x="122" dy="18"><tspan class="green">utilities/</tspan><tspan class="comment" x="500"># Helper Structures Tests</tspan></tspan>
@@ -105,7 +105,7 @@
         <tspan x="156" dy="18">RgbTest.java</tspan>
         
         <tspan x="122" dy="18"><tspan class="orange">view/</tspan><tspan class="comment" x="500"># I/O and CLI Tests</tspan></tspan>
-        <tspan x="156" dy="18">DisplayTest.java</tspan>
+        <tspan x="156" dy="18" class="new">FormatterTest.java</tspan>
         <tspan x="156" dy="18">RendererTest.java</tspan>
         
         <!-- Repository Configuration Files -->
