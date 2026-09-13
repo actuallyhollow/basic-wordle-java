@@ -5,14 +5,18 @@ import com.omaridris.wordle.model.Matcher.State;
 /**
  * Represents a playable Session with its complete core mechanics and internal state.
  * <p>
- * This class defines the Session's mutable state, which includes the chosen target,
- * submitted guess, letter match states, and remaining attempts; thus, it irreversibly
- * mutates this defined state to progress the Session within finite cycles, preventing
- * the underlying data from reaching a corrupt state.
+ * This class acts as the main Model layer in the MVC architecture; thus, it strictly
+ * manages the Session's mutable state, which includes the chosen target, submitted
+ * guess, letter match states, and remaining attempts. It irreversibly mutates this
+ * defined state to progress the Session within finite cycles, preventing the underlying
+ * data from reaching a corrupt state.
  * <p>
  * It cannot be extended and can only be directly instantiated.
  * 
  * @author Omar Idris
+ * @see Dictionary
+ * @see Word
+ * @see Matcher
  */
 public final class Session {
 

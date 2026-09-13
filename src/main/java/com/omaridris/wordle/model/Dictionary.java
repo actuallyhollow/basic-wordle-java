@@ -15,6 +15,7 @@ import java.security.SecureRandom;
  * It cannot be extended and can only be directly instantiated.
  * 
  * @author Omar Idris
+ * @see Word
  */
 public final class Dictionary {
 

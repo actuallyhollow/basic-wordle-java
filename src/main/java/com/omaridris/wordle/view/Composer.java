@@ -16,6 +16,7 @@ import com.omaridris.wordle.model.Matcher.State;
  * It cannot be extended and can only be directly instantiated.
  * 
  * @author Omar Idris
+ * @see Formatter
  */
 public final class Composer {
 

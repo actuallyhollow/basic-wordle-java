@@ -9,6 +9,7 @@ package com.omaridris.wordle.utilities;
  * It cannot be extended or instantiated and can only be statically accessed.
  * 
  * @author Omar Idris
+ * @see Rgb
  */
 public final class Ansi {
 

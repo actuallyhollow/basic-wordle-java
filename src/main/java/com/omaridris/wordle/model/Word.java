@@ -11,6 +11,7 @@ import com.omaridris.wordle.utilities.FrequencyMap;
  * It cannot be extended and can only be directly instantiated.
  * 
  * @author Omar Idris
+ * @see FrequencyMap
  */
 public final class Word {
 

@@ -13,6 +13,7 @@ import com.omaridris.wordle.utilities.Rgb;
  * It cannot be extended or instantiated and can only be statically accessed.
  * 
  * @author Omar Idris
+ * @see Renderer
  */
 public final class Formatter {
 
