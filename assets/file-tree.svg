@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Project File Tree Diagram with Vectorized Paths -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 820" width="600" height="820">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 860" width="600" height="860">
 
     <!-- CSS Style Definitions -->
     <style>
@@ -29,24 +29,26 @@
     <g stroke="#A0AABF" stroke-width="1.4" fill="none" stroke-linecap="round">
 
         <!-- Level 1 (Root) -->
-        <path d="M 24 36 V 800 M 24 44 H 46 M 24 134 H 46 M 24 188 H 46 M 24 764 H 46 M 24 782 H 46 M 24 800 H 46"/>
+        <path d="M 24 36 V 836 M 24 44 H 46 M 24 134 H 46 M 24 188 H 46 M 24 800 H 46 M 24 818 H 46 M 24 836 H 46"/>
         
         <!-- Level 2 -->
         <path d="M 58 54 V 116 M 58 62 H 80 M 58 80 H 80 M 58 98 H 80 M 58 116 H 80"/>
         <path d="M 58 144 V 170 M 58 152 H 80 M 58 170 H 80"/>
-        <path d="M 58 198 V 494 M 58 206 H 80 M 58 494 H 80"/>
+        <path d="M 58 198 V 512 M 58 206 H 80 M 58 512 H 80"/>
 
         <!-- Level 3 -->
-        <path d="M 92 216 V 476 M 92 224 H 114 M 92 242 H 114 M 92 332 H 114 M 92 404 H 114 M 92 476 H 114"/>
-        <path d="M 92 504 V 692 M 92 512 H 114 M 92 530 H 114 M 92 620 H 114 M 92 692 H 114"/>
+        <path d="M 92 216 V 494 M 92 224 H 114 M 92 260 H 114 M 92 350 H 114 M 92 422 H 114 M 92 494 H 114"/>
+        <path d="M 92 522 V 728 M 92 530 H 114 M 92 566 H 114 M 92 656 H 114 M 92 728 H 114"/>
 
         <!-- Level 4 -->
-        <path d="M 126 252 V 314 M 126 260 H 148 M 126 278 H 148 M 126 296 H 148 M 126 314 H 148"/>
-        <path d="M 126 342 V 386 M 126 350 H 148 M 126 368 H 148 M 126 386 H 148"/>
-        <path d="M 126 414 V 458 M 126 422 H 148 M 126 440 H 148 M 126 458 H 148"/>
-        <path d="M 126 540 V 602 M 126 548 H 148 M 126 566 H 148 M 126 584 H 148 M 126 602 H 148"/>
-        <path d="M 126 630 V 674 M 126 638 H 148 M 126 656 H 148 M 126 674 H 148"/>
-        <path d="M 126 702 V 746 M 126 710 H 148 M 126 728 H 148 M 126 746 H 148"/>
+        <path d="M 126 234 V 242 M 126 242 H 148"/>
+        <path d="M 126 270 V 332 M 126 278 H 148 M 126 296 H 148 M 126 314 H 148 M 126 332 H 148"/>
+        <path d="M 126 360 V 404 M 126 368 H 148 M 126 386 H 148 M 126 404 H 148"/>
+        <path d="M 126 432 V 476 M 126 440 H 148 M 126 458 H 148 M 126 476 H 148"/>
+        <path d="M 126 540 V 548 M 126 548 H 148"/>
+        <path d="M 126 576 V 638 M 126 584 H 148 M 126 602 H 148 M 126 620 H 148 M 126 638 H 148"/>
+        <path d="M 126 666 V 710 M 126 674 H 148 M 126 692 H 148 M 126 710 H 148"/>
+        <path d="M 126 738 V 782 M 126 746 H 148 M 126 764 H 148 M 126 782 H 148"/>
 
     </g>
 
@@ -73,10 +75,11 @@
         <tspan x="88" dy="18"><tspan class="cyan">main/java/com/omaridris/wordle/</tspan></tspan>
 
         <tspan x="122" dy="18"><tspan class="yellow">controller/</tspan></tspan>
+        <tspan x="156" dy="18" class="new">Coordinator.java</tspan>
         <tspan x="122" dy="18"><tspan class="red">model/</tspan></tspan>
         <tspan x="156" dy="18">Dictionary.java</tspan>
         <tspan x="156" dy="18">Matcher.java</tspan>
-        <tspan x="156" dy="18" class="new">Session.java</tspan>
+        <tspan x="156" dy="18">Session.java</tspan>
         <tspan x="156" dy="18">Word.java</tspan>
         
         <tspan x="122" dy="18"><tspan class="green">utilities/</tspan></tspan>
@@ -93,10 +96,11 @@
         <!-- Unit Tests -->
         <tspan x="88" dy="18"><tspan class="cyan">test/java/com/omaridris/wordle/</tspan></tspan>
         <tspan x="122" dy="18"><tspan class="yellow">controller/</tspan></tspan>
+        <tspan x="156" dy="18" class="new">CoordinatorTest.java</tspan>
         <tspan x="122" dy="18"><tspan class="red">model/</tspan></tspan>
         <tspan x="156" dy="18">DictionaryTest.java</tspan>
         <tspan x="156" dy="18">MatcherTest.java</tspan>
-        <tspan x="156" dy="18" class="new">SessionTest.java</tspan>
+        <tspan x="156" dy="18">SessionTest.java</tspan>
         <tspan x="156" dy="18">WordTest.java</tspan>
         
         <tspan x="122" dy="18"><tspan class="green">utilities/</tspan></tspan>
