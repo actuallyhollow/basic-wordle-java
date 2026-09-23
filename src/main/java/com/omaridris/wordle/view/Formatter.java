@@ -23,6 +23,7 @@ public final class Formatter {
     private static final Rgb YELLOW = new Rgb(155, 135, 50);
     private static final Rgb GRAY = new Rgb(50, 50, 50);
     private static final Rgb RED = new Rgb(160, 50, 50);
+    private static final Rgb WHITE = new Rgb(255, 255, 255);
     private static final int SEPARATOR_LENGTH = 70;
     private static final int SEPARATOR_DELAY = 10;
 
@@ -75,7 +76,7 @@ public final class Formatter {
      * @param character the English letter evaluated as correct
      */
     public static void printCorrectLetterToken(char character) {
-        Renderer.printColored("[" + character + "]", Formatter.GREEN, null);
+        Renderer.printColored("[" + character + "]", Formatter.GREEN, Formatter.WHITE);
     }
 
     /**
@@ -85,7 +86,7 @@ public final class Formatter {
      * @param character the English letter evaluated as misplaced
      */
     public static void printMisplacedLetterToken(char character) {
-        Renderer.printColored("[" + character + "]", Formatter.YELLOW, null);
+        Renderer.printColored("[" + character + "]", Formatter.YELLOW, Formatter.WHITE);
     }
 
     /**
@@ -95,7 +96,7 @@ public final class Formatter {
      * @param character the English letter evaluated as incorrect
      */
     public static void printIncorrectLetterToken(char character) {
-        Renderer.printColored("[" + character + "]", Formatter.GRAY, null);
+        Renderer.printColored("[" + character + "]", Formatter.GRAY, Formatter.WHITE);
     }
 
     /**
@@ -103,7 +104,7 @@ public final class Formatter {
      */
     public static void printErrorToken() {
         Renderer.print(" !  ");
-        Renderer.printColored("[Error]", Formatter.RED, null);
+        Renderer.printColored("[Error]", Formatter.RED, Formatter.WHITE);
     }
 
     /**
@@ -111,7 +112,7 @@ public final class Formatter {
      */
     public static void printCrashToken() {
         Renderer.print(" !  ");
-        Renderer.printColored("[Crash]", Formatter.RED, null);
+        Renderer.printColored("[Crash]", Formatter.RED, Formatter.WHITE);
     }
 
     // ------*------ Structural Headers ------*------
@@ -229,15 +230,15 @@ public final class Formatter {
     public static void printColorKeySequence() {
         
         Renderer.print(" *  ");
-        Renderer.printColored("[Green] ", Formatter.GREEN, null);
+        Renderer.printColored("[Green] ", Formatter.GREEN, Formatter.WHITE);
         Renderer.print(" : Letter is in the word, and in correct spot.\n");
 
         Renderer.print(" *  ");
-        Renderer.printColored("[Yellow]", Formatter.YELLOW, null);
+        Renderer.printColored("[Yellow]", Formatter.YELLOW, Formatter.WHITE);
         Renderer.print(" : Letter is in the word, but in wrong spot.\n");
 
         Renderer.print(" *  ");
-        Renderer.printColored("[Gray]  ", Formatter.GRAY, null);
+        Renderer.printColored("[Gray]  ", Formatter.GRAY, Formatter.WHITE);
         Renderer.print(" : Letter is not in the word in any spot.\n");
         
     }

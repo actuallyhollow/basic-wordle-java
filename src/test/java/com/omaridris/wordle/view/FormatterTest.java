@@ -22,12 +22,13 @@ public class FormatterTest {
     private static final Rgb GREEN = new Rgb(65, 115, 60);
     private static final Rgb YELLOW = new Rgb(155, 135, 50);
     private static final Rgb GRAY = new Rgb(50, 50, 50);
+    private static final Rgb WHITE = new Rgb(255, 255, 255);
 
     // ------*------ Testing printCorrectLetterToken(char) ------*------
 
     /**
      * Tests {@link Formatter#printCorrectLetterToken(char)} method to validate that
-     * correct letters are correctly formatted with a green background.
+     * correct letters are formatted with a green background and a white foreground.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
@@ -40,13 +41,14 @@ public class FormatterTest {
 
         // Arrange
         char correctLetter = 'A';
-        String expectedOutput = Ansi.getBackgroundSequence(FormatterTest.GREEN) + "[" + correctLetter + "]" + Ansi.RESET;
+        String activeColors = Ansi.getBackgroundSequence(FormatterTest.GREEN) + Ansi.getForegroundSequence(FormatterTest.WHITE);
+        String expectedOutput = activeColors + "[" + correctLetter + "]" + Ansi.RESET;
         
         // Act
         String actualOutput = SystemLambda.tapSystemOut(() -> {Formatter.printCorrectLetterToken(correctLetter);});
         
         // Assert
-        Assertions.assertEquals(expectedOutput, actualOutput, "A correct letter should be correctly formatted with a green background.");
+        Assertions.assertEquals(expectedOutput, actualOutput, "A correct letter should be formatted with a green background and a white foreground.");
         
     }
 
@@ -54,7 +56,7 @@ public class FormatterTest {
 
     /**
      * Tests {@link Formatter#printMisplacedLetterToken(char)} method to validate that
-     * misplaced letters are correctly formatted with a yellow background.
+     * misplaced letters are formatted with a yellow background and a white foreground.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
@@ -67,13 +69,14 @@ public class FormatterTest {
 
         // Arrange
         char misplacedLetter = 'L';
-        String expectedOutput = Ansi.getBackgroundSequence(FormatterTest.YELLOW) + "[" + misplacedLetter + "]" + Ansi.RESET;
+        String activeColors = Ansi.getBackgroundSequence(FormatterTest.YELLOW) + Ansi.getForegroundSequence(FormatterTest.WHITE);
+        String expectedOutput = activeColors + "[" + misplacedLetter + "]" + Ansi.RESET;
         
         // Act
         String actualOutput = SystemLambda.tapSystemOut(() -> {Formatter.printMisplacedLetterToken(misplacedLetter);});
         
         // Assert
-        Assertions.assertEquals(expectedOutput, actualOutput, "A misplaced letter should be correctly formatted with a yellow background.");
+        Assertions.assertEquals(expectedOutput, actualOutput, "A misplaced letter should be formatted with a yellow background and a white foreground.");
         
     }
 
@@ -81,7 +84,7 @@ public class FormatterTest {
 
     /**
      * Tests {@link Formatter#printIncorrectLetterToken(char)} method to validate that
-     * incorrect letters are correctly formatted with a gray background.
+     * incorrect letters are formatted with a gray background and a white foreground.
      * <p>
      * Tests are conducted using the AAA pattern (Arrange, Act, Assert).
      * 
@@ -94,13 +97,14 @@ public class FormatterTest {
 
         // Arrange
         char incorrectLetter = 'E';
-        String expectedOutput = Ansi.getBackgroundSequence(FormatterTest.GRAY) + "[" + incorrectLetter + "]" + Ansi.RESET;
+        String activeColors = Ansi.getBackgroundSequence(FormatterTest.GRAY) + Ansi.getForegroundSequence(FormatterTest.WHITE);
+        String expectedOutput = activeColors + "[" + incorrectLetter + "]" + Ansi.RESET;
         
         // Act
         String actualOutput = SystemLambda.tapSystemOut(() -> {Formatter.printIncorrectLetterToken(incorrectLetter);});
         
         // Assert
-        Assertions.assertEquals(expectedOutput, actualOutput, "An incorrect letter should be correctly formatted with a gray background.");
+        Assertions.assertEquals(expectedOutput, actualOutput, "An incorrect letter should be formatted with a gray background and a white foreground.");
         
     }
 
