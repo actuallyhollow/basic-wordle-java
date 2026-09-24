@@ -13,8 +13,9 @@ optimize performance.
 4. **Write Clean and Documented Code** - Provide detailed and easy-to-read documentation.
 
 ### 📁 Diagram ###
-**Unified UML Class Diagram** - Optimized for dark-themed environments.<br>
-<img src="assets/class-diagram.svg" alt="Unified UML Class Diagram.">
+**Unified UML Class Diagram** - Visualizes core MVC architecture and class relationships.
+![Unified UML Class Diagram.](assets/class-uml-light.drawio.svg#gh-light-mode-only)
+![Unified UML Class Diagram.](assets/class-uml-dark.drawio.svg#gh-dark-mode-only)
 
 ### ✏️ Additions ###
 **Commits** - To see the latest features, fixes, and updates, please check the [commit history](https://github.com/actuallyhollow/basic-wordle-java/commits/main).
@@ -52,8 +53,9 @@ javadoc -d docs/src -sourcepath src/main/java:src/test/java -cp "lib/*" -tag sce
 ```
 
 ### 🛠️ Structure ###
-**Project File Tree** - Optimized for dark-themed environments.<br>
-<img src="assets/file-tree.svg" alt="Project File Tree.">
+**Project File Tree Hierarchy** - Visualizes package structure and source code organization.<br>
+![Project File Tree Hierarchy.](assets/file-tree-light.drawio.svg#gh-light-mode-only)
+![Project File Tree Hierarchy.](assets/file-tree-dark.drawio.svg#gh-dark-mode-only)
 
 ### 📖 Credits ###
 * **Author** - Omar Idris
