@@ -4,7 +4,7 @@ actual GUI, while focusing heavily on OOP principles to handle game logic and st
 optimize performance.
 
 ### 🚧 Status ###
-**Work in Progress** - Finalizing domain models and utilities in preparation for transitioning to the Controller layer.
+**Finishing Touches** - Core MVC layers fully implemented, polishing documentation and assets in preparation for v1.0.0.
 
 ### 🎯 Goals ###
 1. **Apply OOP Concepts** - Strict encapsulation, class relationships, and abstraction.
@@ -13,7 +13,7 @@ optimize performance.
 4. **Write Clean and Documented Code** - Provide detailed and easy-to-read documentation.
 
 ### 📁 Diagram ###
-**Unified UML Class Diagram** - Visualizes core MVC architecture and class relationships.
+**Unified UML Class Diagram** - Visualizes core MVC architecture and class relationships.<br>
 ![Unified UML Class Diagram.](assets/class-uml-light.drawio.svg#gh-light-mode-only)
 ![Unified UML Class Diagram.](assets/class-uml-dark.drawio.svg#gh-dark-mode-only)
 
@@ -34,6 +34,11 @@ optimize performance.
 **Game End States**
 * **Victory** - Correctly guessing the 5-letter word before or on the 6th attempt.
 * **Defeat** - Exhausting all 6 attempts without matching the hidden word.
+
+### ⏳ Lifecycle ###
+**Execution Activity Diagram** - Visualizes application launch sequence and MVC routing.<br>
+![Execution Activity Diagram.](assets/app-activity-light.drawio.svg#gh-light-mode-only)
+![Execution Activity Diagram.](assets/app-activity-dark.drawio.svg#gh-dark-mode-only)
 
 ### 🚀 Compiling ###
 **Setup** - Requires JDK 17 or higher, an IDE (VS Code, IntelliJ, Eclipse).
