@@ -25,7 +25,7 @@ public final class Formatter {
     private static final Rgb RED = new Rgb(160, 50, 50);
     private static final Rgb WHITE = new Rgb(255, 255, 255);
     private static final int SEPARATOR_LENGTH = 70;
-    private static final int SEPARATOR_DELAY = 10;
+    private static final int SEPARATOR_DELAY = 5;
 
     /**
      * Prevents instantiation of new Formatter objects.
@@ -46,15 +46,17 @@ public final class Formatter {
     }
 
     /**
-     * Prints a separator token to the console using the default length of 70 dashes.
+     * Prints a separator token to the console using the default length of
+     * {@value Formatter#SEPARATOR_LENGTH} dashes.
      */
     public static void printSeparatorToken() {
         Renderer.print("-".repeat(Formatter.SEPARATOR_LENGTH) + "\n", Formatter.SEPARATOR_DELAY);
     }
 
     /**
-     * Prints a separator token to the console using the default length of 70 dashes,
-     * enclosed by leading and trailing newlines.
+     * Prints a separator token to the console using the default length of
+     * {@value Formatter#SEPARATOR_LENGTH} dashes, enclosed by leading and trailing
+     * newlines.
      */
     public static void printSpacedSeparatorToken() {
         Formatter.printNewlineToken();

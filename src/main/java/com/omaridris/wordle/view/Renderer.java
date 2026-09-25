@@ -22,7 +22,7 @@ public final class Renderer {
     /**
      * The default millisecond delay between printed characters to simulate typing speed.
      */
-    public static final int DEFAULT_DELAY = 35;
+    public static final int DEFAULT_DELAY = 15;
 
     /**
      * Prevents instantiation of new Renderer objects.
@@ -36,8 +36,8 @@ public final class Renderer {
     // ------*------ Text Rendering ------*------
 
     /**
-     * Prints text to the console character-by-character using the default delay of 35
-     * milliseconds as typing speed.
+     * Prints text to the console character-by-character using the default delay of
+     * {@value Renderer#DEFAULT_DELAY} milliseconds as typing speed.
      * <p>
      * The console stream is flushed after every character to ensure real-time rendering.
      * 
@@ -95,7 +95,8 @@ public final class Renderer {
 
     /**
      * Prints text to the console character-by-character with specified foreground RGB
-     * color using the default delay of 35 milliseconds as typing speed.
+     * color using the default delay of {@value Renderer#DEFAULT_DELAY} milliseconds as
+     * typing speed.
      * <p>
      * Passing null to the Rgb parameter uses the console's default color.
      * 
@@ -109,7 +110,8 @@ public final class Renderer {
 
     /**
      * Prints text to the console character-by-character with specified background and
-     * foreground RGB colors using the default delay of 35 milliseconds as typing speed.
+     * foreground RGB colors using the default delay of {@value Renderer#DEFAULT_DELAY}
+     * milliseconds as typing speed.
      * <p>
      * Passing null to either Rgb parameter uses the console's default color.
      * 
